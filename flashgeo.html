@@ -7,166 +7,169 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css"> <style>
-    /* Stili specifici per la pagina progetto */
+  <link rel="stylesheet" href="styles.css"> 
+  
+  <style>
+    /* --- STILI BASE E HERO --- */
     .project-hero {
       padding: 12rem 0 6rem;
       background: var(--gradient-card);
       border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden; /* Taglia il braccio che esce dallo schermo su Desktop */
+      min-height: 700px;
     }
-    .project-header { text-align: left; max-width: 800px; }
+    
+    .project-header { text-align: left; max-width: 800px; position: relative; z-index: 5; }
+    
+    .project-title-container {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin: 1rem 0 1.5rem 0;
+    }
+
+    .project-app-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      object-fit: contain;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
     .project-meta {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
       margin-top: 3rem;
       padding-top: 2rem;
       border-top: 1px solid var(--border);
     }
-    .project-content { padding: 6rem 0; }
+
+    /* --- GESTIONE BRACCIO (DESKTOP) --- */
+    .project-floating-mockup.desktop-only {
+        position: absolute;
+        right: -250px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        pointer-events: none;
+        display: block;
+    }
+
+    .project-floating-mockup.desktop-only img {
+        width: 1000px;
+        height: auto;
+        filter: drop-shadow(-40px 40px 70px rgba(0,0,0,0.8));
+        transform: rotate(-0.2deg);
+    }
+
+    /* Versione mobile inizialmente nascosta */
+    .mobile-only { display: none; }
+
+    /* --- CONTENUTO E PADDING AGGIUNTIVO --- */
+    .project-content { 
+      padding: 10rem 0 6rem; /* Padding aumentato a 10rem per distanziare "La Sfida" */
+    }
+
+    /* --- GALLERY CAROUSEL --- */
+    .project-gallery-carousel {
+      width: 100%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 4rem 0;
+    }
+    .project-gallery-carousel::-webkit-scrollbar { display: none; }
+
+    .gallery-track {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-left: calc((100vw - 1200px) / 2);
+      padding-right: 2rem;
+    }
+
+    .gallery-item {
+      flex: 0 0 auto;
+      width: auto;
+      height: 500px;
+      max-width: 85vw;
+      border-radius: var(--radius-lg);
+      scroll-snap-align: center;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
     .project-gallery {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
       margin-top: 4rem;
     }
+
     .gallery-img {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border);
       width: 100%;
       transition: var(--transition-smooth);
     }
-    .gallery-img:hover { transform: translateY(-5px); border-color: var(--primary); }
-    .full-width { grid-column: 1 / -1; }
-    
-    @media (max-width: 768px) {
-      .project-gallery { grid-template-columns: 1fr; }
+
+    /* --- RESPONSIVE FIX --- */
+    @media (max-width: 1200px) {
+        .gallery-track { padding-left: 5%; }
+        .project-floating-mockup.desktop-only { right: -350px; }
     }
 
-    /* Contenitore per allineare titolo e icona */
-.project-title-container {
-  display: flex;
-  align-items: center; /* Allinea verticalmente al centro */
-  gap: 1.5rem;         /* Spazio tra il nome e l'icona */
-  margin: 1rem 0 1.5rem 0;
-}
+    @media (max-width: 992px) {
+        .mobile-only { display: block !important; }
+        .desktop-only { display: none !important; }
 
-/* Stile per l'icona dell'app */
-.project-app-icon {
-  width: 80px;         /* Regola la grandezza in base ai tuoi gusti */
-  height: 80px;
-  border-radius: 18px; /* Effetto arrotondato stile iOS */
-  object-fit: contain;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombra per profondità */
-}
+        .project-hero {
+            padding: 8rem 0 4rem;
+            min-height: auto;
+            overflow: visible;
+        }
 
-/* Mobile responsive: riduci l'icona su schermi piccoli */
-@media (max-width: 640px) {
-  .project-title-container {
-    gap: 1rem;
-  }
-  .project-app-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 14px;
-  }
-}
-/* Fondamentale: la sezione deve contenere l'immagine senza creare scroll orizzontale */
-.project-hero {
-    position: relative;
-    overflow: hidden; /* Taglia l'immagine che eccede il bordo dello schermo */
-    min-height: 700px; /* Aumentato per ospitare l'immagine gigante */
-}
+        .project-header {
+            text-align: center;
+            max-width: 100%;
+        }
 
-.project-floating-mockup {
-    position: absolute;
-    /* Posizionamento estremo a destra */
-    right: -250px;      /* Spostato ancora più a destra per far uscire il braccio dal bordo schermo */
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    pointer-events: none;
-}
+        .project-title-container { justify-content: center; }
 
-.project-floating-mockup img {
-    width: 1000px;      /* DIMENSIONE MASSIMA */
-    height: auto;
-    display: block;
-    filter: drop-shadow(-40px 40px 70px rgba(0,0,0,0.8));
-    
-    /* Leggera rotazione per dare l'idea che il braccio entri "ad angolo" */
-    transform: rotate(-0.2deg);
-    opacity: 0.95; /* Opzionale: un filo di trasparenza per fonderlo con lo sfondo dark */
-}
+        .project-meta {
+            grid-template-columns: repeat(2, 1fr);
+            text-align: left;
+        }
 
-/* Regolazione per monitor più piccoli (Laptop) */
-@media (max-width: 1600px) {
-    .project-floating-mockup img {
-        width: 900px;
-        right: -250px;
+        .project-content {
+            padding-top: 6rem; /* Spazio bilanciato per mobile */
+        }
+
+        .project-floating-mockup-mobile {
+            width: 100%;
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .project-floating-mockup-mobile img {
+            width: 110%; /* Effetto zoom per impatto */
+            max-width: 500px;
+            height: auto;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
+        }
+
+        .gallery-item { height: 350px; }
+        .project-gallery { grid-template-columns: 1fr; }
     }
-}
 
-/* Tablet: riduciamo per non coprire tutto il testo */
-@media (max-width: 1024px) {
-    .project-floating-mockup {
-        right: -150px;
+    @media (max-width: 480px) {
+        .project-meta { grid-template-columns: 1fr; gap: 1.5rem; }
+        .hero-title { font-size: 2.5rem; }
     }
-    .project-floating-mockup img {
-        width: 700px;
-    }
-}
-
-/* Contenitore esterno che taglia il contenuto in eccesso */
-.project-gallery-carousel {
-  width: 100%;
-  overflow-x: auto; /* Attiva lo scroll orizzontale */
-  scroll-snap-type: x mandatory; /* Effetto "calamitato": l'immagine si ferma al centro */
-  scrollbar-width: none; /* Nasconde la barra su Firefox */
-  -ms-overflow-style: none; /* Nasconde la barra su IE/Edge */
-  padding: 2rem 0;
-}
-
-/* Nasconde la scrollbar su Chrome, Safari e Opera */
-.project-gallery-carousel::-webkit-scrollbar {
-  display: none;
-}
-
-/* Il binario che contiene le immagini */
-.gallery-track {
-  display: flex;
-  gap: 20px; /* Spazio tra le immagini */
-  padding-left: calc((100vw - var(--container-width, 1200px)) / 2); /* Allinea l'inizio al container */
-  padding-right: 2rem;
-}
-
-/* Le singole immagini del carosello */
-.gallery-item {
-  flex: 0 0 auto; /* Fondamentale: impedisce al carosello di schiacciare l'immagine */
-  width: auto;      /* Lascia che la larghezza sia calcolata in base all'altezza */
-  height: 500px;    /* Imposta un'altezza fissa che ti piace per il carosello */
-  max-width: 90%vw;
-  border-radius: var(--radius-lg);
-  scroll-snap-align: center;
-  object-fit: contain; /* Mantiene le proporzioni originali senza deformare */
-  background: transparent; /* Evita sfondi strani se l'immagine è un PNG */
-  transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-  transform: scale(1.02);
-}
-
-/* Mobile: rendiamo le immagini più larghe per coprire lo schermo */
-@media (max-width: 768px) {
-  .gallery-item {
-    width: 90%;
-  }
-  .gallery-track {
-    padding-left: 1rem;
-  }
-}
-
   </style>
 </head>
 <body>
@@ -180,39 +183,44 @@
     </div>
   </header>
 
-    <section class="project-hero">
-  <div class="container" style="position: relative;"> <div class="project-header animate-fade-in">
-      <span class="section-tag">Case Study</span>
-      
-      <div class="project-title-container">
-        <h1 class="hero-title text-gradient">FlashGEO</h1>
-        <img src="App Icon.png" alt="FlashGEO Icon" class="project-app-icon">
+  <section class="project-hero">
+    <div class="container" style="position: relative;"> 
+      <div class="project-header animate-fade-in">
+        <span class="section-tag">Case Study</span>
+        
+        <div class="project-title-container">
+          <h1 class="hero-title text-gradient">FlashGEO</h1>
+          <img src="App Icon.png" alt="FlashGEO Icon" class="project-app-icon">
+        </div>
+
+        <p class="section-subtitle">Una semplice app per imparare in modo rapido ed efficace la geografia.</p>
+        
+        <div class="project-meta">
+          <div class="meta-item">
+            <span class="contact-label">Cliente</span>
+            <span class="contact-value">Indie App</span>
+          </div>
+          <div class="meta-item">
+            <span class="contact-label">Servizio</span>
+            <span class="contact-value">App Development & UX/UI Design</span>
+          </div>
+          <div class="meta-item">
+            <span class="contact-label">Anno</span>
+            <span class="contact-value">2025</span>
+          </div>
+        </div>
       </div>
 
-      <p class="section-subtitle">Una semplice app per imparare in modo rapido ed efficace la geografia.</p>
-      
-      <div class="project-meta">
-        <div class="meta-item">
-          <span class="contact-label">Cliente</span>
-          <span class="contact-value">Indie App</span>
-        </div>
-        <div class="meta-item">
-          <span class="contact-label">Servizio</span>
-          <span class="contact-value">App Development & UX/UI Design</span>
-        </div>
-        <div class="meta-item">
-          <span class="contact-label">Anno</span>
-          <span class="contact-value">2025</span>
-        </div>
+      <div class="project-floating-mockup desktop-only">
+        <img src="Mockup.png" alt="FlashGEO Mockup">
       </div>
-    </div>
 
-    <div class="project-floating-mockup">
-      <img src="Mockup.png" alt="FlashGEO Mockup">
-    </div>
+      <div class="project-floating-mockup-mobile mobile-only">
+        <img src="Mockup.png" alt="FlashGEO Mockup">
+      </div>
 
-  </div>
-</section>
+    </div>
+  </section>
 
   <section class="project-content">
     <div class="container">
@@ -236,16 +244,15 @@
         </div>
       </div>
 
-     <div class="project-gallery-carousel">
-        <div class="gallery-track">
-            <img src="Group 24.png" alt="Dettaglio Interfaccia" class="gallery-item" loading="lazy">
-            <img src="Group 26.png" alt="Flashcards mechanics" class="gallery-item" loading="lazy">
-            <img src="Group 26.png" alt="Quizzes" class="gallery-item" loading="lazy">
-        </div>
-    </div>
+      <div class="project-gallery-carousel">
+          <div class="gallery-track">
+              <img src="Group 24.png" alt="Dettaglio Interfaccia" class="gallery-item" loading="lazy">
+              <img src="Group 26.png" alt="Flashcards mechanics" class="gallery-item" loading="lazy">
+              <img src="Group 26.png" alt="Quizzes" class="gallery-item" loading="lazy">
+          </div>
+      </div>
 
       <div class="project-gallery">
-     <!-- <img src="Group 24.png" alt="Dettaglio Interfaccia" class="gallery-img full-width" loading="lazy"> <!-->
         <img src="placeholder2.webp" alt="Visual Branding" class="gallery-img" loading="lazy">
         <img src="placeholder3.webp" alt="User Experience" class="gallery-img" loading="lazy">
       </div>
