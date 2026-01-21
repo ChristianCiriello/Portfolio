@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portfolio di design creativo - Graphic Design, UX/UI Design, Logo Design e Montaggio Video">
+  <meta name="keywords" content="graphic design, ux design, ui design, logo design, video editing, portfolio">
+  <title>Christian Ciriello | Graphic Designer & Web/IOS Developer</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="#home" class="logo"> <img src="icons&logos/White CC Logo.svg" alt="Logo Studio" class="logo-img"></a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#servizi">Servizi</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">Chi Sono</a></li>
+        </ul>
+
+        <a href="#contatti" class="btn btn-primary nav-cta">Contattami</a>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <span class="hamburger"></span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">Chi Sono</a></li>
+        <li><a href="#contatti" class="btn btn-primary mobile-cta">Contattami</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+    </div>
+
+    <div class="container hero-content">
+      <span class="badge animate-fade-in">Graphic Designer & Web/IOS Developer</span>
+
+      <h1 class="hero-title animate-fade-in delay-1">
+        Design che comunica, <span class="text-gradient">esperienze che convertono.</span>
+      </h1>
+
+      <p class="hero-subtitle animate-fade-in delay-2">
+        Brand Identity • Sviluppo Web/Mobile • Graphic Design • Video Making
+      </p>
+
+      <div class="hero-buttons animate-fade-in delay-3">
+        <a href="#portfolio" class="btn btn-primary btn-lg">Scopri i miei lavori</a>
+        <a href="#contatti" class="btn btn-outline btn-lg">Richiedi Info!</a>
+      </div>
+
+      <div class="hero-stats animate-fade-in delay-4">
+        <div class="stat">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Progetti Completati</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">4+</span>
+          <span class="stat-label">Anni di Esperienza</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Clienti Soddisfatti</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator animate-fade-in delay-5">
+      <span>Scorri per esplorare</span>
+      <div class="scroll-arrow">↓</div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="servizi">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Servizi</span>
+        <h2 class="section-title">
+          Trasformo le tue <span class="text-gradient">idee in realtà</span>
+        </h2>
+        <p class="section-subtitle">
+          Da idea a risultato cucito su misura, <br>soluzioni concrete per elevare il tuo brand.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19l7-7 3 3-7 7-3-3z" />
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+              <path d="M2 2l7.586 7.586" />
+              <circle cx="11" cy="11" r="2" />
+            </svg>
+          </div>
+          <h3>Graphic Design</h3>
+          <p>Non solo estetica: creo sistemi visivi coerenti che raccontano i valori del tuo brand e restano impressi
+            nella mente dei clienti.</p>
+          <ul class="service-features">
+            <li>Brand Identity</li>
+            <li>Logo Design</li>
+            <li>Marketing Strategies</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18" />
+              <path d="M9 21V9" />
+            </svg>
+          </div>
+          <h3>Web Development</h3>
+          <p>siti web veloci, responsive e ottimizzati SEO, progettati per offrire una navigazione fluida e massimizzare
+            le conversioni.</p>
+          <ul class="service-features">
+            <li>Web Design</li>
+            <li>HTML/CSS/JS</li>
+            <li>UX/UI</li>
+            <li>SEO Optimizations</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 3h12l4 6-10 13L2 9Z" />
+              <path d="M11 3 8 9l4 13 4-13-3-6" />
+              <path d="M2 9h20" />
+            </svg>
+          </div>
+          <h3>IOS Development</h3>
+          <p>Dall'idea al prototipo: sviluppo interfacce mobile intuitive (iOS/Android) mettendo sempre l'utente al
+            centro del progetto.</p>
+          <ul class="service-features">
+            <li>Swift/SwiftUI</li>
+            <li>UX/UI</li>
+            <li>IOS App Design</li>
+            <li>Prototyping</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m22 8-6 4 6 4V8Z" />
+              <rect x="2" y="6" width="14" height="12" rx="2" />
+            </svg>
+          </div>
+          <h3>Video Making</h3>
+          <p>Storytelling dinamico per i tuoi canali social e campagne pubblicitarie. Video ad alto impatto che
+            catturano l'attenzione in pochi secondi.</p>
+          <ul class="service-features">
+            <li>Video Editing</li>
+            <li>Motion Design</li>
+            <li>Motion Graphics</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">
+          <span class="text-gradient">Progetti</span>
+        </h2>
+        <p class="section-subtitle">
+          Una selezione dei miei progetti più significativi.
+        </p>
+      </div>
+
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">Tutti</button>
+        <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="mobile">Mobile App Development</button>
+        <button class="filter-btn" data-filter="video">Video</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid">
+        <article class="portfolio-card" data-category="graphic">
+          <div class="portfolio-image"
+            style="background-image: url('sublvl.jpg'); background-size: cover; background-position: center;">
+            <div class="portfolio-overlay">
+              <span class="portfolio-category">Graphic Design</span>
+              <h3>Sublvl</h3>
+            </div>
+          </div>
+        </article>
+
+
+
+        <article class="portfolio-card" data-category="mobile">
+          <div class="portfolio-image">
+            <a href="flashgeo.html" class="portfolio-link-wrapper">
+              <img src="flashGeoAssets/Group 21.png" alt="FlashGEO App Preview" loading="lazy">
+              <div class="portfolio-overlay">
+                <span class="portfolio-category">App Development</span>
+                <h3>FlashGEO</h3>
+                <span class="view-project">Scopri il progetto →</span>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="mobile">
+          <div class="portfolio-image">
+            <a href="lisionario.html" class="portfolio-link-wrapper">
+              <img src="lisionarioAssets/thumbnail.png" alt="LISionario App Preview" loading="lazy">
+              <div class="portfolio-overlay">
+                <span class="portfolio-category">App Development</span>
+                <h3>LISionario</h3>
+                <span class="view-project">Scopri il progetto →</span>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="mobile">
+          <div class="portfolio-image">
+            <a href="quizhu.html" class="portfolio-link-wrapper">
+              <img src="quizhuAssets/quizhu thumbnail.png" alt="QuiZHU App Preview" loading="lazy">
+              <div class="portfolio-overlay">
+                <span class="portfolio-category">App Development</span>
+                <h3>QuiZHU</h3>
+                <span class="view-project">Scopri il progetto →</span>
+              </div>
+            </a>
+          </div>
+        </article>
+
+
+        <article class="portfolio-card" data-category="mobile">
+          <div class="portfolio-image">
+            <a href="sheetsy.html" class="portfolio-link-wrapper">
+              <img src="sheetsyAssets/sheetsyThumbnail.jpg" alt="SheetSy App Preview" loading="lazy">
+              <div class="portfolio-overlay">
+                <span class="portfolio-category">App Development</span>
+                <h3>SheetSy</h3>
+                <span class="view-project">Scopri il progetto →</span>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="mobile">
+          <div class="portfolio-image">
+            <a href="bugbusters.html" class="portfolio-link-wrapper">
+              <img src="bugBustersAssets/thumbnail.png" alt="BugBusters App Preview" loading="lazy">
+              <div class="portfolio-overlay">
+                <span class="portfolio-category">App Development</span>
+                <h3>BugBusters</h3>
+                <span class="view-project">Scopri il progetto →</span>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="web">
+          <div class="portfolio-image"
+            style="background-image: url('logoFarmacia.jpg'); background-size: cover; background-position: center;">
+            <a href="https://farmaciadicoiano.it" target="un sito da me creato" class="portfolio-link-wrapper">
+              <div class="portfolio-overlay">
+                <span class="portfolio-category">Graphic Design</span>
+                <h3>Farmacia di Coiano</h3>
+                <span class="view-project">Visita il sito →</span>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="web">
+          <div class="portfolio-image"
+            style="background-image: url('logoTraslochi.jpg'); background-size: cover; background-position: center;">
+            <a href="https://traslochibm.it" target="un sito da me creato" class="portfolio-link-wrapper">
+              <div class="portfolio-overlay">
+                <span class="portfolio-category">Web Development</span>
+                <h3>TraslochiBM</h3>
+                <span class="view-project">Visita il sito →</span>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="graphic">
+          <div class="portfolio-image"
+            style="background-image: url('panevintageThumbnail.png'); background-size: cover; background-position: center;">
+            <div class="portfolio-overlay">
+              <span class="portfolio-category">Graphic Design</span>
+              <h3>Pane & Vintage</h3>
+            </div>
+          </div>
+        </article>
+
+
+        <article class="portfolio-card" data-category="web">
+          <div class="portfolio-image"
+            style="background-image: url('soccorsoThumbnail.png'); background-size: cover; background-position: center;">
+            <a href="https://soccorsostradalesamuele.it" target="un sito da me creato" class="portfolio-link-wrapper">
+              <div class="portfolio-overlay">
+                <span class="portfolio-category">Graphic Design</span>
+                <h3>Soccorso Stradale Samuele</h3>
+                <span class="view-project">Visita il sito →</span>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="graphic">
+          <div class="portfolio-image"
+            style="background-image: url('vintageThumbnail.jpeg'); background-size: cover; background-position: center;">
+            <div class="portfolio-overlay">
+              <span class="portfolio-category">Graphic Design</span>
+              <h3>Vintage Athletics</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="ux">
+          <div class="portfolio-image"
+            style="background: linear-gradient(135deg, hsl(200, 70%, 45%), hsl(220, 70%, 50%));">
+            <div class="portfolio-overlay">
+              <span class="portfolio-category">UX/UI</span>
+              <h3>Dashboard Analytics</h3>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-bg"></div>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <span class="section-tag">About me</span>
+          <h2 class="section-title">
+            Designer con una<br>
+            <span class="text-gradient">visione unica</span>
+          </h2>
+
+          <div class="about-text">
+            <p>
+              "Sono Christian Ciriello, Graphic Designer & Web/Mobile Developer. <br>
+              Da oltre 4 anni aiuto aziende e startup a definire la propria presenza digitale attraverso un approccio
+              che fonde estetica e performance.
+              Il mio metodo non si limita all'esecuzione grafica, ma scava nel profondo del tuo mercato per trovare
+              soluzioni visive che generano risultati concreti.
+              Che si tratti di un rebranding o della creazione di una piattaforma web da zero, il mio obiettivo è uno
+              solo: "rendere il tuo brand indimenticabile."
+            </p>
+          </div>
+
+          <div class="skills">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Sketch</span>
+            <span class="skill-tag">Adobe Creative Suite</span>
+            <span class="skill-tag">Wordpress</span>
+            <span class="skill-tag">Final Cut Pro</span>
+            <span class="skill-tag">Illustrator</span>
+            <span class="skill-tag">Inkscape</span>
+            <span class="skill-tag">Photoshop</span>
+            <span class="skill-tag">GIMP</span>
+            <span class="skill-tag">Audacity</span>
+          </div>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+                <path d="M9 18h6" />
+                <path d="M10 22h4" />
+              </svg>
+            </div>
+            <h3>Creatività</h3>
+            <p>Ogni progetto è un'opportunità per creare qualcosa di unico.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
+            </div>
+            <h3>Precisione</h3>
+            <p>Attenzione maniacale ai dettagli in ogni aspetto del lavoro.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+              </svg>
+            </div>
+            <h3>Passione</h3>
+            <p>Amo quello che faccio e si vede nei risultati.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
+            </div>
+            <h3>Qualità</h3>
+            <p>Standard elevati per superare sempre le aspettative.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contatti">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-tag">Contatti</span>
+          <h2 class="section-title">
+            Iniziamo a<br>
+            <span class="text-gradient">collaborare</span>
+          </h2>
+          <p class="contact-subtitle">
+            Hai un progetto in mente? Parliamone insieme e trasformiamo le tue
+            idee in realtà visive straordinarie.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-label">Email</span>
+                <a href="mailto:hello@studio.design" class="contact-value">christianciriello.work@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-label">Location</span>
+                <span class="contact-value">Caserta, Italia</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <span class="social-label">Seguimi</span>
+            <div class="social-icons">
+              <a href="https://github.com/ChristianCiriello" class="social-icon" aria-label="GitHub" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/christianciriello" class="social-icon" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect width="4" height="12" x="2" y="9" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Dribbble">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94" />
+                  <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32" />
+                  <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72" />
+                </svg>
+              </a>
+              <a href="https://www.behance.net/christiciriell" class="social-icon" aria-label="Behance">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.754 1.138 2.327 2.484 2.327 1.066 0 1.726-.455 1.972-1.298h3.3zm-8.508-3.28h4.764c-.086-1.268-.743-2.011-2.306-2.011-1.49 0-2.286.814-2.458 2.011zM9.688 15.238c0-2.052-1.615-2.723-2.896-2.723H2V22h4.792c1.366 0 4.138-.754 4.138-3.393 0-1.535-.832-2.587-1.242-2.869zm-4.137-1.22h1.65c.746 0 1.534.369 1.534 1.22 0 .855-.5 1.39-1.534 1.39H5.55v-2.61zm1.766 6.469H5.551v-2.889h1.766c1.013 0 1.726.569 1.726 1.428 0 .83-.65 1.461-1.726 1.461zM9 1H1v6h8V1z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" name="name" placeholder="Il tuo nome" required>
+            </div>
+
+            <div class="form-group">
+              <label for="telefono">Telefono</label>
+              <input type="tel" id="phone" name="phone" placeholder="Il tuo numero di telefono" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="La tua email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Messaggio</label>
+              <textarea id="message" name="message" placeholder="Parlami del tuo progetto..." rows="5"
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-full">
+              Invia messaggio
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column brand-col">
+          <a href="#home" class="logo footer-logo">
+            <img src="icons&logos/White CC Logo.svg" alt="Christian Ciriello Logo" class="logo-img-footer">
+          </a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Navigazione</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Chi Sono</a></li>
+            <li><a href="#portfolio">Progetti</a></li>
+            <li><a href="#contatti">Lavoriamo Insieme</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="#servizi">Graphic Design</a></li>
+            <li><a href="#servizi">Web Development</a></li>
+            <li><a href="#servizi">Mobile App</a></li>
+            <li><a href="#servizi">Montaggio Video</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Social</h4>
+          <div class="footer-socials">
+            <a href="https://github.com/ChristianCiriello" class="social-icon"><img src="icons&logos/Github icon.png"
+                alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/christianciriello" class="social-icon"><img
+                src="icons&logos/LinkedIn icon.png" alt="LinkedIn"></a>
+            <a href="https://www.behance.net/christiciriell" class="social-icon"><img src="icons&logos/Behance icon.png"
+                alt="Behance"></a>
+            <a href="https://www.behance.net/christiciriell" class="social-icon"><img
+                src="icons&logos/Dribbble icon.png" alt="Dribbble"></a>
+          </div>
+          <a href="mailto:christianciriello.work@gmail.com" class="footer-mail-btn">Prenota una call <svg
+              xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cta-icon">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Christian Ciriello • Powered By Christian Ciriello</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span class="toast-message"></span>
+  </div>
+
+  <!-- Scripts -->
+  <a href="#home" class="back-to-top" id="backToTop" aria-label="Torna su">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6" />
+    </svg>
+    <script src="script.js"></script>
+  </a>
+</body>
+
+</html>

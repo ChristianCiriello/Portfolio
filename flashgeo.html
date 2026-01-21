@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlashGEO | Christian Ciriello</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* --- STILI SPECIFICI PROJECT PAGE --- */
+    .project-hero {
+      padding: 12rem 0 6rem;
+      background: var(--gradient-card);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      min-height: 700px;
+    }
+
+    .project-header { text-align: left; max-width: 800px; position: relative; z-index: 5; }
+
+    .project-title-container {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin: 1rem 0 1.5rem 0;
+    }
+
+    .project-app-icon {
+      width: 80px; height: 80px;
+      border-radius: 18px;
+      object-fit: contain;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* --- GESTIONE MOCKUP --- */
+    .project-floating-mockup.desktop-only {
+      position: absolute; right: -250px; top: 50%;
+      transform: translateY(-50%); z-index: 10;
+      pointer-events: none; display: block;
+    }
+
+    .project-floating-mockup.desktop-only img {
+      width: 1000px; height: auto;
+      filter: drop-shadow(-40px 40px 70px rgba(0, 0, 0, 0.8));
+    }
+
+    .mobile-only { display: none; }
+
+    /* --- CONTENUTO --- */
+    .project-content { padding: 10rem 0 6rem; }
+
+    .value-icons-container {
+      display: flex; gap: 1rem; margin-bottom: 1.5rem;
+    }
+
+    .tech-icon {
+      width: 40px; height: 40px; object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+      transition: transform 0.3s ease;
+    }
+
+    .value-card:hover .tech-icon { transform: translateY(-5px) scale(1.1); }
+
+    /* --- GALLERY --- */
+    .project-gallery-carousel {
+      width: 100%; overflow-x: auto; scroll-snap-type: x mandatory;
+      scrollbar-width: none; -ms-overflow-style: none; padding: 4rem 0;
+    }
+    .project-gallery-carousel::-webkit-scrollbar { display: none; }
+
+    .gallery-track {
+      display: flex; align-items: center; gap: 20px;
+      padding-left: calc((100vw - 1200px) / 2); padding-right: 2rem;
+    }
+
+    .gallery-item {
+      flex: 0 0 auto; height: 500px; width: auto;
+      max-width: 85vw; border-radius: var(--radius-lg);
+      scroll-snap-align: center; object-fit: contain;
+    }
+
+    /* LOGO SOLO NEL FOOTER: EXTRA LARGE */
+.logo-img-footer {
+  height: 250px; /* Quasi il doppio rispetto all'header */
+  width: auto;
+  margin-bottom: 0.5rem;
+  display: block;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1)); /* Effetto luce */
+}
+
+.logo-img-footer:hover {
+  transform: scale(1.05);
+}
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 1200px) {
+      .gallery-track { padding-left: 5%; }
+      .project-floating-mockup.desktop-only { right: -350px; }
+    }
+
+    @media (max-width: 992px) {
+      .mobile-only { display: block !important; }
+      .desktop-only { display: none !important; }
+      .project-hero { padding: 8rem 0 4rem; min-height: auto; overflow: visible; }
+      .project-header { text-align: center; max-width: 100%; }
+      .project-title-container { justify-content: center; }
+      .project-meta { grid-template-columns: repeat(2, 1fr); text-align: left; }
+      .value-icons-container { justify-content: center; }
+      .project-floating-mockup-mobile { width: 100%; margin-top: 3rem; display: flex; justify-content: center; }
+      .project-floating-mockup-mobile img { width: 110%; max-width: 500px; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4)); }
+      .gallery-item { height: 350px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header scrolled" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo"> 
+          <img src="icons&logos/White CC Logo.svg" alt="Logo Studio" class="logo-img">
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#servizi">Servizi</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#about">Chi Sono</a></li>
+        </ul>
+        <a href="index.html#contatti" class="btn btn-primary nav-cta">Contattami</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <span class="hamburger"></span>
+        </button>
+      </nav>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#servizi">Servizi</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#about">Chi Sono</a></li>
+        <li><a href="index.html#contatti" class="btn btn-primary mobile-cta">Contattami</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="project-hero">
+    <div class="container" style="position: relative;">
+      <div class="project-header animate-fade-in">
+        <span class="section-tag">Case Study</span>
+        <div class="project-title-container">
+          <h1 class="hero-title text-gradient">FlashGEO</h1>
+          <img src="flashGeoAssets/App Icon.png" alt="FlashGEO Icon" class="project-app-icon">
+        </div>
+        <p class="section-subtitle">Una semplice app per imparare in modo rapido ed efficace la geografia.</p>
+        <div class="project-meta">
+          <div class="meta-item"><span class="contact-label">Cliente</span><span class="contact-value">Indie App</span></div>
+          <div class="meta-item"><span class="contact-label">Servizio</span><span class="contact-value">App Design & Dev</span></div>
+          <div class="meta-item"><span class="contact-label">Anno</span><span class="contact-value">2025</span></div>
+        </div>
+      </div>
+      <div class="project-floating-mockup desktop-only"><img src="flashGeoAssets/Mockup.png" alt="Mockup"></div>
+      <div class="project-floating-mockup-mobile mobile-only"><img src="flashGeoAssets/Mockup.png" alt="Mockup"></div>
+    </div>
+  </section>
+
+  <section class="project-content">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2 class="section-title">La Sfida</h2>
+          <div class="about-text">
+            <p>FlashGEO nasce per rendere lo studio della geografia un'attività dinamica, superando i limiti dei metodi tradizionali.</p>
+            <p>L'obiettivo era creare un sistema di apprendimento basato su micro-sessioni e feedback immediato.</p>
+          </div>
+          <h2 class="section-title" style="margin-top: 3rem;">Il Risultato</h2>
+          <div class="about-text">
+            <p>Un'interfaccia pulita e prestazioni elevate che permettono agli utenti di monitorare i progressi in tempo reale.</p>
+          </div>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icons-container">
+              <img src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96.png" alt="SwiftUI" class="tech-icon">
+              <img src="https://developer.apple.com/assets/elements/icons/swift/swift-96x96.png" alt="Swift" class="tech-icon">
+            </div>
+            <h3>Tecnologia</h3>
+            <p>Swift & SwiftUI</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icons-container">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma" class="tech-icon">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Inkscape_Logo.svg" alt="Inkscape" class="tech-icon">
+              <img src="icons&logos/Logo Procreate.webp" alt="Procreate" class="tech-icon">
+            </div>
+            <h3>Design</h3>
+            <p>Figma & Inkscape</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-gallery-carousel">
+        <div class="gallery-track">
+          <img src="flashGeoAssets/Group 24.png" alt="UI 1" class="gallery-item" loading="lazy">
+          <img src="flashGeoAssets/Group 26.png" alt="UI 2" class="gallery-item" loading="lazy">
+          <img src="flashGeoAssets/Group 26.png" alt="UI 3" class="gallery-item" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container" style="text-align: center;">
+      <h2 class="section-title">Ti piace questo progetto?</h2>
+      <p class="section-subtitle" style="margin: 0 auto 2rem;">Possiamo creare qualcosa di altrettanto incredibile per il tuo business.</p>
+      <a href="index.html#contatti" class="btn btn-primary btn-lg">Parliamo del tuo progetto</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-column brand-col">
+        <a href="#home" class="logo footer-logo">
+          <img src="icons&logos/White CC Logo.svg" alt="Christian Ciriello Logo" class="logo-img-footer">
+        </a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Navigazione</h4>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">Chi Sono</a></li>
+          <li><a href="index.html#portfolio">Progetti</a></li>
+          <li><a href="index.html#contatti">Lavoriamo Insieme</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Servizi</h4>
+        <ul>
+          <li><a href="index.html#servizi">Graphic Design</a></li>
+          <li><a href="index.html#servizi">Web Development</a></li>
+          <li><a href="index.html#servizi">Mobile App</a></li>
+          <li><a href="index.html#servizi">Montaggio Video</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Social</h4>
+        <div class="footer-socials">
+          <a href="https://github.com/ChristianCiriello" class="social-icon"><img src="icons&logos/Github icon.png" alt="GitHub"></a>
+          <a href="https://www.linkedin.com/in/christianciriello" class="social-icon"><img src="icons&logos/LinkedIn icon.png" alt="LinkedIn"></a>
+          <a href="https://www.behance.net/christiciriell" class="social-icon"><img src="icons&logos/Behance icon.png" alt="Behance"></a>
+          <a href="https://www.behance.net/christiciriell" class="social-icon"><img src="icons&logos/Dribbble icon.png" alt="Dribbble"></a>
+        </div>
+        <a href="mailto:christianciriello.work@gmail.com" class="footer-mail-btn">Prenota una call  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cta-icon">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer-bottom"> 
+      <p>&copy; 2026 Christian Ciriello • Powered By Christian Ciriello</p>
+    </div>
+  </div>
+</footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span class="toast-message"></span>
+  </div>
+
+  <!-- Scripts -->
+   <a href="#home" class="back-to-top" id="backToTop" aria-label="Torna su">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m18 15-6-6-6 6"/>
+  </svg>
+  <script src="script.js"></script>
+</a>
+</body>
+</html>
+
+  <script>
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      mobileToggle.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
