@@ -1,102 +1,90 @@
-// ===== Mobile Menu Toggle =====
-const mobileToggle = document.getElementById('mobileToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
-
-mobileToggle.addEventListener('click', () => {
-  mobileToggle.classList.toggle('active');
-  mobileMenu.classList.toggle('active');
-});
-
-// Close mobile menu when clicking a link
-mobileLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    mobileToggle.classList.remove('active');
-    mobileMenu.classList.remove('active');
-  });
-});
-
-// ===== Header Scroll Effect =====
+// Costanti globali
 const header = document.getElementById('header');
+const backToTop = document.getElementById('backToTop');
+const navLinks = document.querySelectorAll('.nav-links a');
+const sections = document.querySelectorAll('section[id]');
 
+// ===== Optimization: Throttling Scroll Events =====
+let isScrolling = false;
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
+  if (!isScrolling) {
+    window.requestAnimationFrame(() => {
+      handleScrollEffects();
+      isScrolling = false;
+    });
+    isScrolling = true;
+  }
+}, { passive: true });
+
+function handleScrollEffects() {
+  const scrollY = window.scrollY;
+
+  // Header Scroll Effect
+  if (scrollY > 50) {
     header.classList.add('scrolled');
   } else {
     header.classList.remove('scrolled');
   }
+
+  // Back to Top Button
+  if (scrollY > 300) {
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
+  }
+
+  // Active Navigation Link (Aggiornato solo se necessario)
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+  });
+}
+
+// ===== Mobile Menu (Ottimizzato) =====
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+
+const toggleMenu = () => {
+  mobileToggle.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+};
+
+mobileToggle.addEventListener('click', toggleMenu);
+
+document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+  link.addEventListener('click', toggleMenu);
 });
 
-// ===== Portfolio Filter =====
+// ===== Portfolio Filter (Hardware Accelerated) =====
 const filterButtons = document.querySelectorAll('.filter-btn');
 const portfolioCards = document.querySelectorAll('.portfolio-card');
 
 filterButtons.forEach(button => {
   button.addEventListener('click', () => {
-    // Remove active class from all buttons
     filterButtons.forEach(btn => btn.classList.remove('active'));
-    // Add active class to clicked button
     button.classList.add('active');
     
     const filter = button.dataset.filter;
     
     portfolioCards.forEach(card => {
-      if (filter === 'all' || card.dataset.category === filter) {
-        card.classList.remove('hidden');
-        card.style.animation = 'fadeIn 0.5s ease forwards';
-      } else {
-        card.classList.add('hidden');
+      const isVisible = filter === 'all' || card.dataset.category === filter;
+      card.classList.toggle('hidden', !isVisible);
+      if (isVisible) {
+        // Usiamo le classi CSS invece di .style per performance migliori
+        card.style.opacity = '1';
       }
     });
   });
 });
 
-// ===== Contact Form =====
-const contactForm = document.getElementById('contactForm');
-const toast = document.getElementById('toast');
-const toastMessage = toast.querySelector('.toast-message');
-
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  
-  // Get form data
-  const formData = new FormData(contactForm);
-  const name = formData.get('name');
-  
-  // Show success toast
-  showToast(`Grazie ${name}! Ti risponderò presto.`);
-  
-  // Reset form
-  contactForm.reset();
-});
-
-function showToast(message) {
-  toastMessage.textContent = message;
-  toast.classList.add('show');
-  
-  setTimeout(() => {
-    toast.classList.remove('show');
-  }, 4000);
-}
-
-// ===== Smooth Scroll for Anchor Links =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      const headerHeight = header.offsetHeight;
-      const targetPosition = target.offsetTop - headerHeight;
-      
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
-    }
-  });
-});
-
-// ===== Scroll Animations =====
+// ===== Intersection Observer (Lazy Animation) =====
 const observerOptions = {
   threshold: 0.1,
   rootMargin: '0px 0px -50px 0px'
@@ -106,46 +94,31 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+      observer.unobserve(entry.target); // Smette di osservare una volta animato (risparmia CPU)
     }
   });
 }, observerOptions);
 
-// Add scroll animation to elements
 document.querySelectorAll('.service-card, .portfolio-card, .value-card').forEach(el => {
   el.classList.add('scroll-animate');
   observer.observe(el);
 });
 
-// ===== Active Navigation Link =====
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-
-window.addEventListener('scroll', () => {
-  let current = '';
-  
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    const sectionHeight = section.offsetHeight;
-    
-    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-      current = section.getAttribute('id');
-    }
+// ===== Contact Form & Toast =====
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
+    showToast(`Grazie ${formData.get('name')}! Ti risponderò presto.`);
+    contactForm.reset();
   });
-  
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('active');
-    }
-  });
-});
-// ===== Back to Top Button =====
-const backToTop = document.getElementById('backToTop');
+}
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    backToTop.classList.add('show');
-  } else {
-    backToTop.classList.remove('show');
-  }
-});
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  const toastMessage = toast.querySelector('.toast-message');
+  toastMessage.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4000);
+}
