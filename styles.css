@@ -205,6 +205,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
   height: 8rem;
+  position: relative;
 }
 
 /* Stile per il nuovo logo immagine */
@@ -368,10 +369,14 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 768px) {
   .nav-links {
     display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .nav-cta {
     display: flex;
+    margin-left: auto;
   }
   
   .mobile-toggle {
@@ -1225,4 +1230,77 @@ a.contact-value:hover {
 .social-icon:hover img {
   transform: translateY(-3px); /* Effetto salto */
   filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--primary)); /* Glow colorato al passaggio */
+}
+
+/* ===== Language Switcher (Custom) ===== */
+.lang-switcher {
+  position: relative;
+  margin-left: 1rem;
+  z-index: 1000;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.lang-btn:hover, .lang-btn.active {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: hsla(202, 55%, 45%, 0.1);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 160px;
+  box-shadow: var(--shadow-elevated);
+}
+
+.lang-switcher.active .lang-dropdown {
+  display: flex;
+  animation: slideDown 0.2s ease;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  transition: var(--transition-smooth);
+}
+
+.lang-option:hover {
+  background: var(--background-light);
+  color: var(--foreground);
+}
+
+.lang-flag {
+  font-size: 1.2rem;
 }

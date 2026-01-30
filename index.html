@@ -30,13 +30,13 @@
         <a href="#home" class="logo"> <img src="icons&logos/White CC Logo.svg" alt="Logo Studio" class="logo-img"></a>
 
         <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#servizi">Servizi</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#about">Chi Sono</a></li>
+          <li><a href="#home" data-i18n="nav.home">Home</a></li>
+          <li><a href="#servizi" data-i18n="nav.services">Servizi</a></li>
+          <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="#about" data-i18n="nav.about">Chi Sono</a></li>
         </ul>
 
-        <a href="#contatti" class="btn btn-primary nav-cta">Contattami</a>
+        <a href="#contatti" class="btn btn-primary nav-cta" data-i18n="nav.contact">Contattami</a>
 
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
           <span class="hamburger"></span>
@@ -47,11 +47,11 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
       <ul class="mobile-nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#servizi">Servizi</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#about">Chi Sono</a></li>
-        <li><a href="#contatti" class="btn btn-primary mobile-cta">Contattami</a></li>
+        <li><a href="#home" data-i18n="nav.home">Home</a></li>
+        <li><a href="#servizi" data-i18n="nav.services">Servizi</a></li>
+        <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+        <li><a href="#about" data-i18n="nav.about">Chi Sono</a></li>
+        <li><a href="#contatti" class="btn btn-primary mobile-cta" data-i18n="nav.contact">Contattami</a></li>
       </ul>
     </div>
   </header>
@@ -64,39 +64,39 @@
     </div>
 
     <div class="container hero-content">
-      <span class="badge animate-fade-in">Graphic Designer & Web/IOS Developer</span>
+      <span class="badge animate-fade-in" data-i18n="hero.badge">Graphic Designer & Web/IOS Developer</span>
 
       <h1 class="hero-title animate-fade-in delay-1">
-        Design che comunica, <span class="text-gradient">esperienze che convertono.</span>
+        <span data-i18n="hero.title_1">Design che comunica,</span> <span class="text-gradient" data-i18n="hero.title_2">esperienze che convertono.</span>
       </h1>
 
-      <p class="hero-subtitle animate-fade-in delay-2">
+      <p class="hero-subtitle animate-fade-in delay-2" data-i18n="hero.subtitle">
         Brand Identity • Sviluppo Web/Mobile • Graphic Design • Video Making
       </p>
 
       <div class="hero-buttons animate-fade-in delay-3">
-        <a href="#portfolio" class="btn btn-primary btn-lg">Scopri i miei lavori</a>
-        <a href="#contatti" class="btn btn-outline btn-lg">Richiedi Info!</a>
+        <a href="#portfolio" class="btn btn-primary btn-lg" data-i18n="hero.btn_work">Scopri i miei lavori</a>
+        <a href="#contatti" class="btn btn-outline btn-lg" data-i18n="hero.btn_info">Richiedi Info!</a>
       </div>
 
       <div class="hero-stats animate-fade-in delay-4">
         <div class="stat">
           <span class="stat-number">50+</span>
-          <span class="stat-label">Progetti Completati</span>
+          <span class="stat-label" data-i18n="hero.stat_projects">Progetti Completati</span>
         </div>
         <div class="stat">
           <span class="stat-number">4+</span>
-          <span class="stat-label">Anni di Esperienza</span>
+          <span class="stat-label" data-i18n="hero.stat_exp">Anni di Esperienza</span>
         </div>
         <div class="stat">
           <span class="stat-number">100%</span>
-          <span class="stat-label">Clienti Soddisfatti</span>
+          <span class="stat-label" data-i18n="hero.stat_clients">Clienti Soddisfatti</span>
         </div>
       </div>
     </div>
 
     <div class="scroll-indicator animate-fade-in delay-5">
-      <span>Scorri per esplorare</span>
+      <span data-i18n="hero.scroll">Scorri per esplorare</span>
       <div class="scroll-arrow">↓</div>
     </div>
   </section>
@@ -105,11 +105,11 @@
   <section class="services" id="servizi">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Servizi</span>
+        <span class="section-tag" data-i18n="services.tag">Servizi</span>
         <h2 class="section-title">
-          Trasformo le tue <span class="text-gradient">idee in realtà</span>
+          <span data-i18n="services.title_1">Trasformo le tue</span> <span class="text-gradient" data-i18n="services.title_2">idee in realtà</span>
         </h2>
-        <p class="section-subtitle">
+        <p class="section-subtitle" data-i18n="services.subtitle">
           Da idea a risultato cucito su misura, <br>soluzioni concrete per elevare il tuo brand.
         </p>
       </div>
@@ -126,7 +126,7 @@
             </svg>
           </div>
           <h3>Graphic Design</h3>
-          <p>Non solo estetica: creo sistemi visivi coerenti che raccontano i valori del tuo brand e restano impressi
+          <p data-i18n="services.graphic_desc">Non solo estetica: creo sistemi visivi coerenti che raccontano i valori del tuo brand e restano impressi
             nella mente dei clienti.</p>
           <ul class="service-features">
             <li>Brand Identity</li>
@@ -145,7 +145,7 @@
             </svg>
           </div>
           <h3>Web Development</h3>
-          <p>siti web veloci, responsive e ottimizzati SEO, progettati per offrire una navigazione fluida e massimizzare
+          <p data-i18n="services.web_desc">siti web veloci, responsive e ottimizzati SEO, progettati per offrire una navigazione fluida e massimizzare
             le conversioni.</p>
           <ul class="service-features">
             <li>Web Design</li>
@@ -165,7 +165,7 @@
             </svg>
           </div>
           <h3>IOS Development</h3>
-          <p>Dall'idea al prototipo: sviluppo interfacce mobile intuitive (iOS/Android) mettendo sempre l'utente al
+          <p data-i18n="services.ios_desc">Dall'idea al prototipo: sviluppo interfacce mobile intuitive (iOS/Android) mettendo sempre l'utente al
             centro del progetto.</p>
           <ul class="service-features">
             <li>Swift/SwiftUI</li>
@@ -184,7 +184,7 @@
             </svg>
           </div>
           <h3>Video Making</h3>
-          <p>Storytelling dinamico per i tuoi canali social e campagne pubblicitarie. Video ad alto impatto che
+          <p data-i18n="services.video_desc">Storytelling dinamico per i tuoi canali social e campagne pubblicitarie. Video ad alto impatto che
             catturano l'attenzione in pochi secondi.</p>
           <ul class="service-features">
             <li>Video Editing</li>
@@ -200,17 +200,17 @@
   <section class="portfolio" id="portfolio">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Portfolio</span>
+        <span class="section-tag" data-i18n="portfolio.tag">Portfolio</span>
         <h2 class="section-title">
-          <span class="text-gradient">Progetti</span>
+          <span class="text-gradient" data-i18n="portfolio.title">Progetti</span>
         </h2>
-        <p class="section-subtitle">
+        <p class="section-subtitle" data-i18n="portfolio.subtitle">
           Una selezione dei miei progetti più significativi.
         </p>
       </div>
 
       <div class="portfolio-filters">
-        <button class="filter-btn active" data-filter="all">Tutti</button>
+        <button class="filter-btn active" data-filter="all" data-i18n="portfolio.filter_all">Tutti</button>
         <button class="filter-btn" data-filter="graphic">Graphic Design</button>
         <button class="filter-btn" data-filter="web">Web Development</button>
         <button class="filter-btn" data-filter="mobile">Mobile App Development</button>
@@ -237,7 +237,7 @@
               <div class="portfolio-overlay">
                 <span class="portfolio-category">App Development</span>
                 <h3>FlashGEO</h3>
-                <span class="view-project">Scopri il progetto →</span>
+                <span class="view-project" data-i18n="portfolio.view_project">Scopri il progetto →</span>
               </div>
             </a>
           </div>
@@ -250,7 +250,7 @@
               <div class="portfolio-overlay">
                 <span class="portfolio-category">App Development</span>
                 <h3>LISionario</h3>
-                <span class="view-project">Scopri il progetto →</span>
+                <span class="view-project" data-i18n="portfolio.view_project">Scopri il progetto →</span>
               </div>
             </a>
           </div>
@@ -263,7 +263,7 @@
               <div class="portfolio-overlay">
                 <span class="portfolio-category">App Development</span>
                 <h3>QuiZHU</h3>
-                <span class="view-project">Scopri il progetto →</span>
+                <span class="view-project" data-i18n="portfolio.view_project">Scopri il progetto →</span>
               </div>
             </a>
           </div>
@@ -277,7 +277,7 @@
               <div class="portfolio-overlay">
                 <span class="portfolio-category">App Development</span>
                 <h3>SheetSy</h3>
-                <span class="view-project">Scopri il progetto →</span>
+                <span class="view-project" data-i18n="portfolio.view_project">Scopri il progetto →</span>
               </div>
             </a>
           </div>
@@ -290,7 +290,7 @@
               <div class="portfolio-overlay">
                 <span class="portfolio-category">App Development</span>
                 <h3>BugBusters</h3>
-                <span class="view-project">Scopri il progetto →</span>
+                <span class="view-project" data-i18n="portfolio.view_project">Scopri il progetto →</span>
               </div>
             </a>
           </div>
@@ -303,7 +303,7 @@
               <div class="portfolio-overlay">
                 <span class="portfolio-category">Graphic Design</span>
                 <h3>Farmacia di Coiano</h3>
-                <span class="view-project">Visita il sito →</span>
+                <span class="view-project" data-i18n="portfolio.visit_site">Visita il sito →</span>
               </div>
             </a>
           </div>
@@ -316,7 +316,7 @@
               <div class="portfolio-overlay">
                 <span class="portfolio-category">Web Development</span>
                 <h3>TraslochiBM</h3>
-                <span class="view-project">Visita il sito →</span>
+                <span class="view-project" data-i18n="portfolio.visit_site">Visita il sito →</span>
               </div>
             </a>
           </div>
@@ -340,7 +340,7 @@
               <div class="portfolio-overlay">
                 <span class="portfolio-category">Graphic Design</span>
                 <h3>Soccorso Stradale Samuele</h3>
-                <span class="view-project">Visita il sito →</span>
+                <span class="view-project" data-i18n="portfolio.visit_site">Visita il sito →</span>
               </div>
             </a>
           </div>
@@ -375,13 +375,13 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-content">
-          <span class="section-tag">About me</span>
+          <span class="section-tag" data-i18n="about.tag">About me</span>
           <h2 class="section-title">
-            Designer con una<br>
-            <span class="text-gradient">visione unica</span>
+            <span data-i18n="about.title_1">Designer con una</span><br>
+            <span class="text-gradient" data-i18n="about.title_2">visione unica</span>
           </h2>
 
-          <div class="about-text">
+          <div class="about-text" data-i18n="about.text">
             <p>
               "Sono Christian Ciriello, Graphic Designer & Web/Mobile Developer. <br>
               Da oltre 4 anni aiuto aziende e startup a definire la propria presenza digitale attraverso un approccio
@@ -418,8 +418,8 @@
                 <path d="M10 22h4" />
               </svg>
             </div>
-            <h3>Creatività</h3>
-            <p>Ogni progetto è un'opportunità per creare qualcosa di unico.</p>
+            <h3 data-i18n="about.val_creativity">Creatività</h3>
+            <p data-i18n="about.val_creativity_desc">Ogni progetto è un'opportunità per creare qualcosa di unico.</p>
           </div>
 
           <div class="value-card">
@@ -431,8 +431,8 @@
                 <circle cx="12" cy="12" r="2" />
               </svg>
             </div>
-            <h3>Precisione</h3>
-            <p>Attenzione maniacale ai dettagli in ogni aspetto del lavoro.</p>
+            <h3 data-i18n="about.val_precision">Precisione</h3>
+            <p data-i18n="about.val_precision_desc">Attenzione maniacale ai dettagli in ogni aspetto del lavoro.</p>
           </div>
 
           <div class="value-card">
@@ -443,8 +443,8 @@
                   d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
               </svg>
             </div>
-            <h3>Passione</h3>
-            <p>Amo quello che faccio e si vede nei risultati.</p>
+            <h3 data-i18n="about.val_passion">Passione</h3>
+            <p data-i18n="about.val_passion_desc">Amo quello che faccio e si vede nei risultati.</p>
           </div>
 
           <div class="value-card">
@@ -455,8 +455,8 @@
                 <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
               </svg>
             </div>
-            <h3>Qualità</h3>
-            <p>Standard elevati per superare sempre le aspettative.</p>
+            <h3 data-i18n="about.val_quality">Qualità</h3>
+            <p data-i18n="about.val_quality_desc">Standard elevati per superare sempre le aspettative.</p>
           </div>
         </div>
       </div>
@@ -468,12 +468,12 @@
     <div class="container">
       <div class="contact-grid">
         <div class="contact-info">
-          <span class="section-tag">Contatti</span>
+          <span class="section-tag" data-i18n="contact.tag">Contatti</span>
           <h2 class="section-title">
-            Iniziamo a<br>
-            <span class="text-gradient">collaborare</span>
+            <span data-i18n="contact.title_1">Iniziamo a</span><br>
+            <span class="text-gradient" data-i18n="contact.title_2">collaborare</span>
           </h2>
-          <p class="contact-subtitle">
+          <p class="contact-subtitle" data-i18n="contact.subtitle">
             Hai un progetto in mente? Parliamone insieme e trasformiamo le tue
             idee in realtà visive straordinarie.
           </p>
@@ -488,7 +488,7 @@
                 </svg>
               </div>
               <div>
-                <span class="contact-label">Email</span>
+                <span class="contact-label" data-i18n="contact.label_email">Email</span>
                 <a href="mailto:hello@studio.design" class="contact-value">christianciriello.work@gmail.com</a>
               </div>
             </div>
@@ -502,14 +502,14 @@
                 </svg>
               </div>
               <div>
-                <span class="contact-label">Location</span>
+                <span class="contact-label" data-i18n="contact.label_location">Location</span>
                 <span class="contact-value">Caserta, Italia</span>
               </div>
             </div>
           </div>
 
           <div class="social-links">
-            <span class="social-label">Seguimi</span>
+            <span class="social-label" data-i18n="contact.label_follow">Seguimi</span>
             <div class="social-icons">
               <a href="https://github.com/ChristianCiriello" class="social-icon" aria-label="GitHub" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -549,27 +549,27 @@
         <div class="contact-form-wrapper">
           <form class="contact-form" id="contactForm">
             <div class="form-group">
-              <label for="name">Nome</label>
-              <input type="text" id="name" name="name" placeholder="Il tuo nome" required>
+              <label for="name" data-i18n="contact.form_name">Nome</label>
+              <input type="text" id="name" name="name" placeholder="Il tuo nome" data-i18n="contact.form_name_ph" required>
             </div>
 
             <div class="form-group">
-              <label for="telefono">Telefono</label>
-              <input type="tel" id="phone" name="phone" placeholder="Il tuo numero di telefono" required>
+              <label for="telefono" data-i18n="contact.form_phone">Telefono</label>
+              <input type="tel" id="phone" name="phone" placeholder="Il tuo numero di telefono" data-i18n="contact.form_phone_ph" required>
             </div>
 
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="La tua email" required>
+              <label for="email" data-i18n="contact.form_email">Email</label>
+              <input type="email" id="email" name="email" placeholder="La tua email" data-i18n="contact.form_email_ph" required>
             </div>
 
             <div class="form-group">
-              <label for="message">Messaggio</label>
-              <textarea id="message" name="message" placeholder="Parlami del tuo progetto..." rows="5"
+              <label for="message" data-i18n="contact.form_msg">Messaggio</label>
+              <textarea id="message" name="message" placeholder="Parlami del tuo progetto..." data-i18n="contact.form_msg_ph" rows="5"
                 required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg btn-full">
+            <button type="submit" class="btn btn-primary btn-lg btn-full" data-i18n="contact.form_btn">
               Invia messaggio
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -594,17 +594,17 @@
         </div>
 
         <div class="footer-column">
-          <h4>Navigazione</h4>
+          <h4 data-i18n="footer.nav">Navigazione</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Chi Sono</a></li>
-            <li><a href="#portfolio">Progetti</a></li>
-            <li><a href="#contatti">Lavoriamo Insieme</a></li>
+            <li><a href="#home" data-i18n="nav.home">Home</a></li>
+            <li><a href="#about" data-i18n="nav.about">Chi Sono</a></li>
+            <li><a href="#portfolio" data-i18n="nav.portfolio">Progetti</a></li>
+            <li><a href="#contatti" data-i18n="nav.contact">Lavoriamo Insieme</a></li>
           </ul>
         </div>
 
         <div class="footer-column">
-          <h4>Servizi</h4>
+          <h4 data-i18n="footer.services">Servizi</h4>
           <ul>
             <li><a href="#servizi">Graphic Design</a></li>
             <li><a href="#servizi">Web Development</a></li>
@@ -614,7 +614,7 @@
         </div>
 
         <div class="footer-column">
-          <h4>Social</h4>
+          <h4 data-i18n="footer.social">Social</h4>
           <div class="footer-socials">
             <a href="https://github.com/ChristianCiriello" class="social-icon"><img src="icons&logos/Github icon.png"
                 alt="GitHub"></a>
@@ -625,7 +625,7 @@
             <a href="https://www.behance.net/christiciriell" class="social-icon"><img
                 src="icons&logos/Dribbble icon.png" alt="Dribbble"></a>
           </div>
-          <a href="mailto:christianciriello.work@gmail.com" class="footer-mail-btn">Prenota una call <svg
+          <a href="mailto:christianciriello.work@gmail.com" class="footer-mail-btn"><span data-i18n="footer.cta">Prenota una call</span> <svg
               xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cta-icon">
               <path
@@ -635,7 +635,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Christian Ciriello • Powered By Christian Ciriello</p>
+        <p data-i18n="footer.copyright">&copy; 2026 Christian Ciriello • Powered By Christian Ciriello</p>
       </div>
     </div>
   </footer>
@@ -651,8 +651,8 @@
       stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="m18 15-6-6-6 6" />
     </svg>
-    <script src="script.js"></script>
   </a>
+  <script src="script.js"></script>
 </body>
 
 </html>

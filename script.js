@@ -1,124 +1,342 @@
-// Costanti globali
-const header = document.getElementById('header');
-const backToTop = document.getElementById('backToTop');
-const navLinks = document.querySelectorAll('.nav-links a');
-const sections = document.querySelectorAll('section[id]');
+// --- Translations Data ---
+const translations = {
+  it: {
+    nav: { home: "Home", services: "Servizi", portfolio: "Portfolio", about: "Chi Sono", contact: "Contattami" },
+    hero: {
+      badge: "Graphic Designer & Web/IOS Developer",
+      title_1: "Design che comunica,",
+      title_2: "esperienze che convertono.",
+      subtitle: "Brand Identity • Sviluppo Web/Mobile • Graphic Design • Video Making",
+      btn_work: "Scopri i miei lavori",
+      btn_info: "Richiedi Info!",
+      stat_projects: "Progetti Completati",
+      stat_exp: "Anni di Esperienza",
+      stat_clients: "Clienti Soddisfatti",
+      scroll: "Scorri per esplorare"
+    },
+    services: {
+      tag: "Servizi",
+      title_1: "Trasformo le tue",
+      title_2: "idee in realtà",
+      subtitle: "Da idea a risultato cucito su misura, soluzioni concrete per elevare il tuo brand.",
+      graphic_desc: "Non solo estetica: creo sistemi visivi coerenti che raccontano i valori del tuo brand e restano impressi nella mente dei clienti.",
+      web_desc: "Siti web veloci, responsive e ottimizzati SEO, progettati per offrire una navigazione fluida e massimizzare le conversioni.",
+      ios_desc: "Dall'idea al prototipo: sviluppo interfacce mobile intuitive (iOS/Android) mettendo sempre l'utente al centro del progetto.",
+      video_desc: "Storytelling dinamico per i tuoi canali social e campagne pubblicitarie. Video ad alto impatto che catturano l'attenzione in pochi secondi."
+    },
+    portfolio: {
+      tag: "Portfolio",
+      title: "Progetti",
+      subtitle: "Una selezione dei miei progetti più significativi.",
+      filter_all: "Tutti",
+      view_project: "Scopri il progetto →",
+      visit_site: "Visita il sito →"
+    },
+    about: {
+      tag: "About me",
+      title_1: "Designer con una",
+      title_2: "visione unica",
+      text: "\"Sono Christian Ciriello, Graphic Designer & Web/Mobile Developer. Da oltre 4 anni aiuto aziende e startup a definire la propria presenza digitale attraverso un approccio che fonde estetica e performance. Il mio metodo non si limita all'esecuzione grafica, ma scava nel profondo del tuo mercato per trovare soluzioni visive che generano risultati concreti. Che si tratti di un rebranding o della creazione di una piattaforma web da zero, il mio obiettivo è uno solo: rendere il tuo brand indimenticabile.\"",
+      val_creativity: "Creatività",
+      val_creativity_desc: "Ogni progetto è un'opportunità per creare qualcosa di unico.",
+      val_precision: "Precisione",
+      val_precision_desc: "Attenzione maniacale ai dettagli in ogni aspetto del lavoro.",
+      val_passion: "Passione",
+      val_passion_desc: "Amo quello che faccio e si vede nei risultati.",
+      val_quality: "Qualità",
+      val_quality_desc: "Standard elevati per superare sempre le aspettative."
+    },
+    contact: {
+      tag: "Contatti",
+      title_1: "Iniziamo a",
+      title_2: "collaborare",
+      subtitle: "Hai un progetto in mente? Parliamone insieme e trasformiamo le tue idee in realtà visive straordinarie.",
+      label_email: "Email",
+      label_location: "Location",
+      label_follow: "Seguimi",
+      form_name: "Nome",
+      form_name_ph: "Il tuo nome",
+      form_phone: "Telefono",
+      form_phone_ph: "Il tuo numero di telefono",
+      form_email: "Email",
+      form_email_ph: "La tua email",
+      form_msg: "Messaggio",
+      form_msg_ph: "Parlami del tuo progetto...",
+      form_btn: "Invia messaggio"
+    },
+    footer: {
+      nav: "Navigazione",
+      services: "Servizi",
+      social: "Social",
+      cta: "Prenota una call",
+      copyright: "© 2026 Christian Ciriello • Powered By Christian Ciriello"
+    },
+    project_cta: {
+      title: "Ti piace questo progetto?",
+      subtitle: "Possiamo creare qualcosa di altrettanto incredibile per il tuo business.",
+      btn: "Parliamo del tuo progetto"
+    }
+  },
+  en: {
+    nav: { home: "Home", services: "Services", portfolio: "Portfolio", about: "About", contact: "Contact" },
+    hero: {
+      badge: "Graphic Designer & Web/IOS Developer",
+      title_1: "Design that speaks,",
+      title_2: "experiences that convert.",
+      subtitle: "Brand Identity • Web/Mobile Dev • Graphic Design • Video Making",
+      btn_work: "View my work",
+      btn_info: "Get Info!",
+      stat_projects: "Projects Completed",
+      stat_exp: "Years Experience",
+      stat_clients: "Happy Clients",
+      scroll: "Scroll to explore"
+    },
+    services: {
+      tag: "Services",
+      title_1: "Turning your",
+      title_2: "ideas into reality",
+      subtitle: "From idea to tailored result, concrete solutions to elevate your brand.",
+      graphic_desc: "Not just aesthetics: I create coherent visual systems that tell your brand values and stick in customers' minds.",
+      web_desc: "Fast, responsive, and SEO-optimized websites designed to offer smooth navigation and maximize conversions.",
+      ios_desc: "From idea to prototype: developing intuitive mobile interfaces (iOS/Android) always putting the user at the center.",
+      video_desc: "Dynamic storytelling for your social channels and ad campaigns. High-impact videos that capture attention in seconds."
+    },
+    portfolio: {
+      tag: "Portfolio",
+      title: "Projects",
+      subtitle: "A selection of my most significant projects.",
+      filter_all: "All",
+      view_project: "View project →",
+      visit_site: "Visit site →"
+    },
+    about: {
+      tag: "About me",
+      title_1: "Designer with a",
+      title_2: "unique vision",
+      text: "\"I'm Christian Ciriello, Graphic Designer & Web/Mobile Developer. For over 4 years I've helped companies and startups define their digital presence through an approach that blends aesthetics and performance. My method isn't limited to graphic execution but digs deep into your market to find visual solutions that generate concrete results. Whether it's a rebranding or creating a web platform from scratch, my goal is one: to make your brand unforgettable.\"",
+      val_creativity: "Creativity",
+      val_creativity_desc: "Every project is an opportunity to create something unique.",
+      val_precision: "Precision",
+      val_precision_desc: "Maniacal attention to detail in every aspect of work.",
+      val_passion: "Passion",
+      val_passion_desc: "I love what I do and it shows in the results.",
+      val_quality: "Quality",
+      val_quality_desc: "High standards to always exceed expectations."
+    },
+    contact: {
+      tag: "Contacts",
+      title_1: "Let's start",
+      title_2: "collaborating",
+      subtitle: "Have a project in mind? Let's talk and turn your ideas into extraordinary visual realities.",
+      label_email: "Email",
+      label_location: "Location",
+      label_follow: "Follow me",
+      form_name: "Name",
+      form_name_ph: "Your name",
+      form_phone: "Phone",
+      form_phone_ph: "Your phone number",
+      form_email: "Email",
+      form_email_ph: "Your email",
+      form_msg: "Message",
+      form_msg_ph: "Tell me about your project...",
+      form_btn: "Send message"
+    },
+    footer: {
+      nav: "Navigation",
+      services: "Services",
+      social: "Social",
+      cta: "Book a call",
+      copyright: "© 2026 Christian Ciriello • Powered By Christian Ciriello"
+    },
+    project_cta: {
+      title: "Do you like this project?",
+      subtitle: "We can create something just as incredible for your business.",
+      btn: "Let's talk about your project"
+    }
+  },
+  es: {
+    nav: { home: "Inicio", services: "Servicios", portfolio: "Portafolio", about: "Sobre mí", contact: "Contacto" },
+    hero: { badge: "Diseñador Gráfico y Desarrollador Web/IOS", title_1: "Diseño que comunica,", title_2: "experiencias que convierten.", subtitle: "Identidad de Marca • Desarrollo Web/Móvil • Diseño Gráfico", btn_work: "Ver mis trabajos", btn_info: "¡Solicitar Info!", stat_projects: "Proyectos Completados", stat_exp: "Años de Experiencia", stat_clients: "Clientes Felices", scroll: "Desliza para explorar" },
+    services: { tag: "Servicios", title_1: "Transformo tus", title_2: "ideas en realidad", subtitle: "Soluciones concretas para elevar tu marca.", graphic_desc: "Creo sistemas visuales coherentes que cuentan los valores de tu marca.", web_desc: "Sitios web rápidos y responsivos diseñados para maximizar conversiones.", ios_desc: "Desarrollo de interfaces móviles intuitivas centradas en el usuario.", video_desc: "Narración dinámica para tus canales sociales y campañas." },
+    portfolio: { tag: "Portafolio", title: "Proyectos", subtitle: "Una selección de mis proyectos más significativos.", filter_all: "Todos", view_project: "Ver proyecto →", visit_site: "Visitar sitio →" },
+    about: { tag: "Sobre mí", title_1: "Diseñador con una", title_2: "visión única", text: "\"Soy Christian Ciriello. Ayudo a empresas a definir su presencia digital fusionando estética y rendimiento.\"", val_creativity: "Creatividad", val_creativity_desc: "Oportunidad para crear algo único.", val_precision: "Precisión", val_precision_desc: "Atención al detalle.", val_passion: "Pasión", val_passion_desc: "Amo lo que hago.", val_quality: "Calidad", val_quality_desc: "Altos estándares." },
+    contact: { tag: "Contactos", title_1: "Empecemos a", title_2: "colaborar", subtitle: "¿Tienes un proyecto? Hablemos.", label_email: "Correo", label_location: "Ubicación", label_follow: "Sígueme", form_name: "Nombre", form_name_ph: "Tu nombre", form_phone: "Teléfono", form_phone_ph: "Tu teléfono", form_email: "Correo", form_email_ph: "Tu correo", form_msg: "Mensaje", form_msg_ph: "Cuéntame sobre tu proyecto...", form_btn: "Enviar mensaje" },
+    footer: { nav: "Navegación", services: "Servicios", social: "Social", cta: "Reservar llamada", copyright: "© 2026 Christian Ciriello • Powered By Christian Ciriello" },
+    project_cta: {
+      title: "¿Te gusta este proyecto?",
+      subtitle: "Podemos crear algo igual de increíble para tu negocio.",
+      btn: "Hablemos de tu proyecto"
+    }
+  },
+  fr: {
+    nav: { home: "Accueil", services: "Services", portfolio: "Portfolio", about: "À propos", contact: "Contact" },
+    hero: { badge: "Graphiste & Développeur Web/IOS", title_1: "Design qui communique,", title_2: "expériences qui convertissent.", subtitle: "Identité de Marque • Dév Web/Mobile • Graphisme", btn_work: "Voir mes travaux", btn_info: "Demander Info!", stat_projects: "Projets Terminés", stat_exp: "Années d'Expérience", stat_clients: "Clients Satisfaits", scroll: "Défiler pour explorer" },
+    services: { tag: "Services", title_1: "Je transforme vos", title_2: "idées en réalité", subtitle: "Des solutions concrètes pour élever votre marque.", graphic_desc: "Je crée des systèmes visuels cohérents qui racontent les valeurs de votre marque.", web_desc: "Sites web rapides et réactifs conçus pour maximiser les conversions.", ios_desc: "Développement d'interfaces mobiles intuitives centrées sur l'utilisateur.", video_desc: "Storytelling dynamique pour vos réseaux sociaux." },
+    portfolio: { tag: "Portfolio", title: "Projets", subtitle: "Une sélection de mes projets les plus significatifs.", filter_all: "Tous", view_project: "Voir le projet →", visit_site: "Visiter le site →" },
+    about: { tag: "À propos", title_1: "Designer avec une", title_2: "vision unique", text: "\"Je suis Christian Ciriello. J'aide les entreprises à définir leur présence numérique en alliant esthétique et performance.\"", val_creativity: "Créativité", val_creativity_desc: "Créer quelque chose d'unique.", val_precision: "Précision", val_precision_desc: "Attention aux détails.", val_passion: "Passion", val_passion_desc: "J'aime ce que je fais.", val_quality: "Qualité", val_quality_desc: "Standards élevés." },
+    contact: { tag: "Contacts", title_1: "Commençons à", title_2: "collaborer", subtitle: "Vous avez un projet ? Parlons-en.", label_email: "Email", label_location: "Lieu", label_follow: "Suivez-moi", form_name: "Nom", form_name_ph: "Votre nom", form_phone: "Téléphone", form_phone_ph: "Votre téléphone", form_email: "Email", form_email_ph: "Votre email", form_msg: "Message", form_msg_ph: "Parlez-moi de votre projet...", form_btn: "Envoyer message" },
+    footer: { nav: "Navigation", services: "Services", social: "Social", cta: "Réserver un appel", copyright: "© 2026 Christian Ciriello • Powered By Christian Ciriello" },
+    project_cta: {
+      title: "Vous aimez ce projet ?",
+      subtitle: "Nous pouvons créer quelque chose de tout aussi incroyable pour votre entreprise.",
+      btn: "Parlons de votre projet"
+    }
+  },
+  pt: {
+    nav: { home: "Início", services: "Serviços", portfolio: "Portfólio", about: "Sobre", contact: "Contato" },
+    hero: { badge: "Designer Gráfico e Desenvolvedor Web/IOS", title_1: "Design que comunica,", title_2: "experiências que convertem.", subtitle: "Identidade de Marca • Dev Web/Mobile • Design Gráfico", btn_work: "Ver meus trabalhos", btn_info: "Pedir Info!", stat_projects: "Projetos Concluídos", stat_exp: "Anos de Experiência", stat_clients: "Clientes Felizes", scroll: "Role para explorar" },
+    services: { tag: "Serviços", title_1: "Transformo suas", title_2: "ideias em realidade", subtitle: "Soluções concretas para elevar sua marca.", graphic_desc: "Crio sistemas visuais coerentes que contam os valores da sua marca.", web_desc: "Sites rápidos e responsivos projetados para maximizar conversões.", ios_desc: "Desenvolvimento de interfaces móveis intuitivas centradas no usuário.", video_desc: "Storytelling dinâmico para suas redes sociais." },
+    portfolio: { tag: "Portfólio", title: "Projetos", subtitle: "Uma seleção dos meus projetos mais significativos.", filter_all: "Todos", view_project: "Ver projeto →", visit_site: "Visitar site →" },
+    about: { tag: "Sobre mim", title_1: "Designer com uma", title_2: "visão única", text: "\"Sou Christian Ciriello. Ajudo empresas a definir sua presença digital fundindo estética e desempenho.\"", val_creativity: "Criatividade", val_creativity_desc: "Criar algo único.", val_precision: "Precisão", val_precision_desc: "Atenção aos detalhes.", val_passion: "Paixão", val_passion_desc: "Amo o que faço.", val_quality: "Qualidade", val_quality_desc: "Padrões elevados." },
+    contact: { tag: "Contatos", title_1: "Vamos começar a", title_2: "colaborar", subtitle: "Tem um projeto? Vamos conversar.", label_email: "Email", label_location: "Localização", label_follow: "Siga-me", form_name: "Nome", form_name_ph: "Seu nome", form_phone: "Telefone", form_phone_ph: "Seu telefone", form_email: "Email", form_email_ph: "Seu email", form_msg: "Mensagem", form_msg_ph: "Fale sobre seu projeto...", form_btn: "Enviar mensagem" },
+    footer: { nav: "Navegação", services: "Serviços", social: "Social", cta: "Agendar chamada", copyright: "© 2026 Christian Ciriello • Powered By Christian Ciriello" },
+    project_cta: {
+      title: "Gostou deste projeto?",
+      subtitle: "Podemos criar algo tão incrível quanto para o seu negócio.",
+      btn: "Vamos falar sobre seu projeto"
+    }
+  }
+};
 
-// ===== Optimization: Throttling Scroll Events =====
-let isScrolling = false;
-window.addEventListener('scroll', () => {
-  if (!isScrolling) {
-    window.requestAnimationFrame(() => {
-      handleScrollEffects();
-      isScrolling = false;
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Mobile Menu Logic ---
+  const mobileToggle = document.getElementById('mobileToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (mobileToggle && mobileMenu) {
+    // Rimuoviamo eventuali listener precedenti clonando l'elemento (opzionale, ma sicuro)
+    const newToggle = mobileToggle.cloneNode(true);
+    mobileToggle.parentNode.replaceChild(newToggle, mobileToggle);
+    
+    newToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      newToggle.classList.toggle('active');
     });
-    isScrolling = true;
-  }
-}, { passive: true });
-
-function handleScrollEffects() {
-  const scrollY = window.scrollY;
-
-  // Header Scroll Effect
-  if (scrollY > 50) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
   }
 
-  // Back to Top Button
-  if (scrollY > 300) {
-    backToTop.classList.add('show');
-  } else {
-    backToTop.classList.remove('show');
-  }
+  // --- Header Scroll & Back To Top Logic ---
+  const header = document.getElementById('header');
+  const backToTop = document.getElementById('backToTop');
 
-  // Active Navigation Link (Aggiornato solo se necessario)
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    if (scrollY >= sectionTop) {
-      current = section.getAttribute('id');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      if (header) header.classList.add('scrolled');
+      if (backToTop) backToTop.classList.add('show');
+    } else {
+      if (header) header.classList.remove('scrolled');
+      if (backToTop) backToTop.classList.remove('show');
     }
   });
 
-  navLinks.forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+  // --- Portfolio Filter Logic ---
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active class from all buttons
+      filterBtns.forEach(b => b.classList.remove('active'));
+      // Add active class to clicked button
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      portfolioCards.forEach(card => {
+        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
   });
-}
 
-// ===== Mobile Menu (Ottimizzato) =====
-const mobileToggle = document.getElementById('mobileToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-
-const toggleMenu = () => {
-  mobileToggle.classList.toggle('active');
-  mobileMenu.classList.toggle('active');
-};
-
-mobileToggle.addEventListener('click', toggleMenu);
-
-document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-  link.addEventListener('click', toggleMenu);
+  // --- Language Switcher Logic ---
+  injectLanguageSwitcher();
+  
+  // Set initial language
+  const savedLang = localStorage.getItem('selectedLang') || 'it';
+  setLanguage(savedLang);
 });
 
-// ===== Portfolio Filter (Hardware Accelerated) =====
-const filterButtons = document.querySelectorAll('.filter-btn');
-const portfolioCards = document.querySelectorAll('.portfolio-card');
+function injectLanguageSwitcher() {
+  const nav = document.querySelector('.nav');
+  const navCta = document.querySelector('.nav-cta');
+  
+  const langSwitcherHTML = `
+    <div class="lang-switcher" id="langSwitcher">
+      <button class="lang-btn" aria-label="Cambia lingua">
+        <span class="current-flag" style="font-size: 1.4rem;"></span>
+      </button>
+      <div class="lang-dropdown">
+        <button class="lang-option" onclick="setLanguage('it')"><span class="lang-flag">🇮🇹</span> Italiano</button>
+        <button class="lang-option" onclick="setLanguage('en')"><span class="lang-flag">🇬🇧</span> English</button>
+        <button class="lang-option" onclick="setLanguage('es')"><span class="lang-flag">🇪🇸</span> Español</button>
+        <button class="lang-option" onclick="setLanguage('fr')"><span class="lang-flag">🇫🇷</span> Français</button>
+        <button class="lang-option" onclick="setLanguage('pt')"><span class="lang-flag">🇵🇹</span> Português</button>
+      </div>
+    </div>
+  `;
 
-filterButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    filterButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
+  if (nav) {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = langSwitcherHTML;
+    const switcher = wrapper.firstElementChild;
     
-    const filter = button.dataset.filter;
+    // Insert after CTA
+    if (navCta) {
+      nav.insertBefore(switcher, navCta.nextSibling);
+    } else {
+      const mobileToggle = document.querySelector('.mobile-toggle');
+      if (mobileToggle) nav.insertBefore(switcher, mobileToggle);
+      else nav.appendChild(switcher);
+    }
+
+    // Toggle Dropdown
+    const langBtn = switcher.querySelector('.lang-btn');
+    langBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      switcher.classList.toggle('active');
+      langBtn.classList.toggle('active');
+    });
+
+    document.addEventListener('click', () => {
+      switcher.classList.remove('active');
+      langBtn.classList.remove('active');
+    });
+  }
+}
+
+window.setLanguage = function(lang) {
+  localStorage.setItem('selectedLang', lang);
+  document.documentElement.lang = lang;
+
+  // Update button flag
+  const flags = {
+    it: '🇮🇹',
+    en: '🇬🇧',
+    es: '🇪🇸',
+    fr: '🇫🇷',
+    pt: '🇵🇹'
+  };
+  const btnFlag = document.querySelector('.lang-btn .current-flag');
+  if (btnFlag) {
+    btnFlag.textContent = flags[lang];
+  }
+  
+  const elements = document.querySelectorAll('[data-i18n]');
+  elements.forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const keys = key.split('.');
+    let text = translations[lang];
+    keys.forEach(k => { if(text) text = text[k]; });
     
-    portfolioCards.forEach(card => {
-      const isVisible = filter === 'all' || card.dataset.category === filter;
-      card.classList.toggle('hidden', !isVisible);
-      if (isVisible) {
-        // Usiamo le classi CSS invece di .style per performance migliori
-        card.style.opacity = '1';
+    if (text) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = text;
+      } else {
+        el.textContent = text;
       }
-    });
-  });
-});
-
-// ===== Intersection Observer (Lazy Animation) =====
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target); // Smette di osservare una volta animato (risparmia CPU)
     }
   });
-}, observerOptions);
-
-document.querySelectorAll('.service-card, .portfolio-card, .value-card').forEach(el => {
-  el.classList.add('scroll-animate');
-  observer.observe(el);
-});
-
-// ===== Contact Form & Toast =====
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const formData = new FormData(contactForm);
-    showToast(`Grazie ${formData.get('name')}! Ti risponderò presto.`);
-    contactForm.reset();
-  });
-}
-
-function showToast(message) {
-  const toast = document.getElementById('toast');
-  const toastMessage = toast.querySelector('.toast-message');
-  toastMessage.textContent = message;
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 4000);
-}
+};
