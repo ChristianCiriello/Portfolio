@@ -229,27 +229,37 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Portfolio Filter Logic ---
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const portfolioCards = document.querySelectorAll('.portfolio-card');
+ const filterButtons = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-card');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Remove active class from all buttons
-      filterBtns.forEach(b => b.classList.remove('active'));
-      // Add active class to clicked button
-      btn.classList.add('active');
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Gestione classi attive sui bottoni
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 
-      const filterValue = btn.getAttribute('data-filter');
+    const filterValue = btn.getAttribute('data-filter');
 
-      portfolioCards.forEach(card => {
-        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-          card.classList.remove('hidden');
+    portfolioItems.forEach(item => {
+      const category = item.getAttribute('data-category');
+
+      if (filterValue === 'all') {
+        // MOSTRA TUTTO TRANNE I VIDEO
+        if (category === 'video') {
+          item.style.display = 'none';
         } else {
-          card.classList.add('hidden');
+          item.style.display = 'block';
         }
-      });
+      } else if (filterValue === category) {
+        // MOSTRA SOLO LA CATEGORIA SELEZIONATA
+        item.style.display = 'block';
+      } else {
+        // NASCONDI IL RESTO
+        item.style.display = 'none';
+      }
     });
   });
+});
 
   // --- Language Switcher Logic ---
   injectLanguageSwitcher();
@@ -340,3 +350,18 @@ window.setLanguage = function(lang) {
     }
   });
 };
+
+const videoCards = document.querySelectorAll('.portfolio-card[data-category="video"]');
+
+videoCards.forEach(card => {
+  const v = card.querySelector('video');
+  
+  card.addEventListener('mouseenter', () => {
+    v.play();
+  });
+
+  card.addEventListener('mouseleave', () => {
+    v.pause();
+    v.currentTime = 0; // Torna all'inizio e mostra di nuovo la copertina
+  });
+});

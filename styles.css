@@ -1312,3 +1312,74 @@ a.contact-value:hover {
 .lang-flag {
   font-size: 1.2rem;
 }
+
+/* Forza il contenitore ad avere una dimensione gestibile */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Mantiene la forma del video */
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* Impedisce al video di "esplodere" fuori dalla card */
+.portfolio-video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover; /* Riempie lo spazio senza deformarsi */
+  display: block;
+}
+
+/* Se la card intera sembra enorme, controlla il contenitore padre */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crea una griglia ordinata */
+  gap: 20px;
+}
+
+/* 1. Forza la card video ad essere una cella della griglia */
+.portfolio-card[data-category="video"] {
+  display: block;
+  width: 100%;
+}
+
+/* 2. Il wrapper deve avere le STESSE dimensioni delle immagini (4:3) */
+.video-wrapper {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 4 / 3 !important; /* Questo lo rende identico alle altre card */
+  overflow: hidden !important;
+  border-radius: var(--radius-lg);
+  background: #000;
+}
+
+/* 3. Il video deve stare dentro come una foto (object-fit cover) */
+.portfolio-video {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Lo incapsula senza distorsioni */
+  z-index: 1;
+}
+
+/* 4. Overlay sopra il video */
+.video-wrapper .portfolio-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* Nasconde preventivamente tutti i video all'apertura del sito */
+.portfolio-card[data-category="video"] {
+  display: none;
+}
