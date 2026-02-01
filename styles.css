@@ -482,23 +482,91 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.875rem;
   color: var(--muted);
 }
+@media (max-width: 768px) {
+  /* Espande il riquadro a quasi tutta la larghezza dello schermo */
+  .hero-stats {
+    width: 80%;
+    max-width: 400px; /* Impedisce che diventi troppo largo su tablet */
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem; /* Più spazio interno sopra e sotto */
+    display: flex;
+    flex-direction: column; /* Mette i dati uno sotto l'altro */
+    gap: 2.5rem; /* Spazio generoso tra le varie statistiche */
+  }
+
+  .stat {
+    padding: 0;
+    border-bottom: 1px solid var(--border); /* Opzionale: una riga sottile tra i dati */
+    padding-bottom: 1.5rem;
+  }
+
+  .stat:last-child {
+    border-bottom: none; /* Toglie la riga all'ultimo elemento */
+    padding-bottom: 0;
+  }
+
+  .stat-number {
+    font-size: 2rem; /* Numeri belli grandi e leggibili */
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+}
 
 .scroll-indicator {
   position: absolute;
   bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0; /* Occupa tutta la larghezza orizzontale */
+  margin: 0 auto; /* Centra il blocco se ha una width */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--muted);
-  font-size: 0.75rem;
+  justify-content: center;
+  text-align: center;
+  width: fit-content; /* Si stringe attorno al testo */
+  z-index: 10;
+  pointer-events: none; /* Evita che blocchi i click sui tasti sopra */
 }
 
 .scroll-arrow {
-  font-size: 1.25rem;
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
   animation: bounce 2s infinite;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  /* 1. Riduciamo il margine sotto il riquadro nero */
+  .hero-stats {
+    margin-bottom: 4rem !important; /* Spazio tra box e scritta "Scorri" */
+  }
+
+  /* 2. Ripristiniamo il tuo indicatore originale ma compatto */
+  .scroll-indicator {
+    position: relative;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Riduciamo il margine sotto la freccia */
+    margin-bottom: 0 !important; 
+    padding-bottom: 0 !important;
+  }
+
+  /* 3. Chiudiamo il buco tra le due sezioni */
+  .hero {
+    padding-bottom: 0 !important;
+    min-height: auto !important; /* Evita che la hero occupi troppo spazio vuoto */
+  }
+
+  .services {
+    padding-top: 2rem !important; /* Avvicina il titolo "SERVIZI" alla freccia */
+  }
 }
 
 @keyframes bounce {
