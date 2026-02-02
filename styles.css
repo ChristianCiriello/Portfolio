@@ -1575,3 +1575,83 @@ a.contact-value:hover {
         transform: scale(1.2) !important;
     }
 }
+
+
+/* ============================================================
+   FIX DEFINITIVO MOBILE (Christian Ciriello)
+   ============================================================ */
+
+@media screen and (max-width: 768px) {
+    
+    /* 1. FIX FOTO PROFILO: Impedisce alla foto di uscire dallo schermo */
+    .profile-circle {
+        width: 280px !important;  /* Dimensione perfetta per iPhone X/11/12 */
+        height: 280px !important;
+        margin: 0 auto !important;
+    }
+
+    .about-image-container {
+        padding: 1rem 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    /* 2. FIX SOCIAL FOOTER: Centramento reale */
+    .footer-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 2rem !important;
+    }
+
+    .footer-socials {
+        justify-content: center !important; /* Centra le icone social */
+        width: 100% !important;
+        margin: 1rem 0 !important;
+    }
+
+    .footer-column {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    /* 3. FIX CAROSELLO LOGHI (Skills) */
+    .skills {
+        justify-content: center !important; /* Centra i loghi se non scorrono */
+        gap: 15px !important;
+        padding: 10px !important;
+    }
+
+    .tech-icon {
+        width: 40px !important; /* Ridimensiona icone troppo grandi */
+        height: 40px !important;
+    }
+
+    /* 4. FIX GENERALE: Evita lo scroll orizzontale "molle" */
+    body, html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        position: relative !important;
+    }
+
+    .container {
+        padding: 0 1.2rem !important; /* Margini laterali di sicurezza */
+    }
+
+    /* Se avevi il logo troppo grande nel footer */
+    .logo-img-footer {
+        height: 120px !important; /* Ridotto per il mobile */
+        margin: 0 auto !important;
+    }
+}
+
+/* Fix per l'effetto scale che chiedevi: riduciamolo su mobile 
+   perché il dito coprirebbe tutto */
+@media (max-width: 768px) {
+    .tech-icon:hover {
+        transform: scale(1.15) !important;
+    }
+}
