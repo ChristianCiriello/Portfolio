@@ -1525,3 +1525,53 @@ a.contact-value:hover {
 .tech-icon:hover {
       transform: scale(1.35);
     }
+
+
+
+@media (max-width: 768px) {
+    /* Centramento totale della sezione Social */
+    .footer-section, .social-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    .social-icons-wrapper {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 20px !important;
+        width: 100% !important;
+        margin: 1.5rem 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .software-carousel {
+        height: 120px !important; /* Altezza fissa per contenere lo zoom */
+        display: flex !important;
+        align-items: center !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+    }
+
+    .carousel-track {
+        gap: 15px !important; /* Spazio ridotto per il mobile */
+    }
+
+    /* Limitiamo le icone: non devono superare i 45px */
+    .software-tag img {
+        width: 45px !important; 
+        height: 45px !important;
+        object-fit: contain !important;
+    }
+
+    /* Su mobile riduciamo lo zoom a 1.2 invece di 1.5 per evitare che coprano tutto */
+    .software-tag:hover {
+        transform: scale(1.2) !important;
+    }
+}
