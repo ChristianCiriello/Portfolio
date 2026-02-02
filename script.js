@@ -3,9 +3,9 @@ const translations = {
   it: {
     nav: { home: "Home", services: "Servizi", portfolio: "Portfolio", about: "Chi Sono", contact: "Contattami" },
     hero: {
-      badge: "Graphic Designer & Web/IOS Developer",
-      title_1: "Design che comunica,",
-      title_2: "esperienze che convertono.",
+      badge: "Creative Developer",
+      title_1: "Design che cattura, <br> ",
+      title_2: "codice che converte.",
       subtitle: "Brand Identity • Sviluppo Web/Mobile • Graphic Design • Video Making",
       btn_work: "Scopri i miei lavori",
       btn_info: "Richiedi Info!",
@@ -19,10 +19,10 @@ const translations = {
       title_1: "Trasformo le tue",
       title_2: "idee in realtà",
       subtitle: "Da idea a risultato cucito su misura, soluzioni concrete per elevare il tuo brand.",
-      graphic_desc: "Non solo estetica: creo sistemi visivi coerenti che raccontano i valori del tuo brand e restano impressi nella mente dei clienti.",
-      web_desc: "Siti web veloci, responsive e ottimizzati SEO, progettati per offrire una navigazione fluida e massimizzare le conversioni.",
-      ios_desc: "Dall'idea al prototipo: sviluppo interfacce mobile intuitive (iOS/Android) mettendo sempre l'utente al centro del progetto.",
-      video_desc: "Storytelling dinamico per i tuoi canali social e campagne pubblicitarie. Video ad alto impatto che catturano l'attenzione in pochi secondi."
+      graphic_desc: "Oltre il semplice logo. Creo sistemi visivi capaci di raccontare chi sei e di restare impressi nella mente dei clienti.",
+      web_desc: "Siti veloci, sicuri e ottimizzati (Responsive). Realizzo ecosistemi web su misura, dove il design incontra le migliori performance tecniche e logiche SEO.",
+      ios_desc: "App che le persone amano usare. Progetto interfacce intuitive e sviluppo in Swift/Flutter per offrire un'esperienza fluida su ogni dispositivo.z",
+      video_desc: "Contenuti che catturano. Video dinamici e storytelling visivo per fermare lo scrolling e comunicare il tuo messaggio in pochi secondi."
     },
     portfolio: {
       tag: "Portfolio",
@@ -34,23 +34,15 @@ const translations = {
     },
     about: {
       tag: "About me",
-      title_1: "Designer con una",
-      title_2: "visione unica",
-      text: "\"Sono Christian Ciriello, Graphic Designer & Web/Mobile Developer. Da oltre 4 anni aiuto aziende e startup a definire la propria presenza digitale attraverso un approccio che fonde estetica e performance. Il mio metodo non si limita all'esecuzione grafica, ma scava nel profondo del tuo mercato per trovare soluzioni visive che generano risultati concreti. Che si tratti di un rebranding o della creazione di una piattaforma web da zero, il mio obiettivo è uno solo: rendere il tuo brand indimenticabile.\"",
-      val_creativity: "Creatività",
-      val_creativity_desc: "Ogni progetto è un'opportunità per creare qualcosa di unico.",
-      val_precision: "Precisione",
-      val_precision_desc: "Attenzione maniacale ai dettagli in ogni aspetto del lavoro.",
-      val_passion: "Passione",
-      val_passion_desc: "Amo quello che faccio e si vede nei risultati.",
-      val_quality: "Qualità",
-      val_quality_desc: "Standard elevati per superare sempre le aspettative."
+      title_1: "Dall'idea al lancio,",
+      title_2: "senza compromessi",
+      text: "Mi definisco un Creative Developer perché surfo tra i due mondi. Come designer, curo l'emozione e l'impatto visivo del tuo brand; come developer, scrivo codice pulito e scalabile per assicurarmi che tutto funzioni alla perfezione. Che si tratti di un'App iOS, di un sito web o di una nuova Brand Identity, metto al servizio del tuo business un'unica visione integrata. Il mio obiettivo è uno solo: rendere il tuo brand indimenticabile.",
     },
     contact: {
       tag: "Contatti",
-      title_1: "Iniziamo a",
-      title_2: "collaborare",
-      subtitle: "Hai un progetto in mente? Parliamone insieme e trasformiamo le tue idee in realtà visive straordinarie.",
+      title_1: "Hai un'idea?",
+      title_2: "Diamole una forma!",
+      subtitle: "Se sei pronto a lanciare il tuo prossimo progetto o vuoi evolvere quello attuale, parliamone.",
       label_email: "Email",
       label_location: "Location",
       label_follow: "Seguimi",
@@ -80,7 +72,7 @@ const translations = {
   en: {
     nav: { home: "Home", services: "Services", portfolio: "Portfolio", about: "About", contact: "Contact" },
     hero: {
-      badge: "Graphic Designer & Web/IOS Developer",
+      badge: "Creative Developer",
       title_1: "Design that speaks,",
       title_2: "experiences that convert.",
       subtitle: "Brand Identity • Web/Mobile Dev • Graphic Design • Video Making",
@@ -156,7 +148,7 @@ const translations = {
   },
   es: {
     nav: { home: "Inicio", services: "Servicios", portfolio: "Portafolio", about: "Sobre mí", contact: "Contacto" },
-    hero: { badge: "Diseñador Gráfico y Desarrollador Web/IOS", title_1: "Diseño que comunica,", title_2: "experiencias que convierten.", subtitle: "Identidad de Marca • Desarrollo Web/Móvil • Diseño Gráfico", btn_work: "Ver mis trabajos", btn_info: "¡Solicitar Info!", stat_projects: "Proyectos Completados", stat_exp: "Años de Experiencia", stat_clients: "Clientes Felices", scroll: "Desliza para explorar" },
+    hero: { badge: "Desarrollador Creativo", title_1: "Diseño que comunica,", title_2: "experiencias que convierten.", subtitle: "Identidad de Marca • Desarrollo Web/Móvil • Diseño Gráfico", btn_work: "Ver mis trabajos", btn_info: "¡Solicitar Info!", stat_projects: "Proyectos Completados", stat_exp: "Años de Experiencia", stat_clients: "Clientes Felices", scroll: "Desliza para explorar" },
     services: { tag: "Servicios", title_1: "Transformo tus", title_2: "ideas en realidad", subtitle: "Soluciones concretas para elevar tu marca.", graphic_desc: "Creo sistemas visuales coherentes que cuentan los valores de tu marca.", web_desc: "Sitios web rápidos y responsivos diseñados para maximizar conversiones.", ios_desc: "Desarrollo de interfaces móviles intuitivas centradas en el usuario.", video_desc: "Narración dinámica para tus canales sociales y campañas." },
     portfolio: { tag: "Portafolio", title: "Proyectos", subtitle: "Una selección de mis proyectos más significativos.", filter_all: "Todos", view_project: "Ver proyecto →", visit_site: "Visitar sitio →" },
     about: { tag: "Sobre mí", title_1: "Diseñador con una", title_2: "visión única", text: "\"Soy Christian Ciriello. Ayudo a empresas a definir su presencia digital fusionando estética y rendimiento.\"", val_creativity: "Creatividad", val_creativity_desc: "Oportunidad para crear algo único.", val_precision: "Precisión", val_precision_desc: "Atención al detalle.", val_passion: "Pasión", val_passion_desc: "Amo lo que hago.", val_quality: "Calidad", val_quality_desc: "Altos estándares." },
@@ -170,7 +162,7 @@ const translations = {
   },
   fr: {
     nav: { home: "Accueil", services: "Services", portfolio: "Portfolio", about: "À propos", contact: "Contact" },
-    hero: { badge: "Graphiste & Développeur Web/IOS", title_1: "Design qui communique,", title_2: "expériences qui convertissent.", subtitle: "Identité de Marque • Dév Web/Mobile • Graphisme", btn_work: "Voir mes travaux", btn_info: "Demander Info!", stat_projects: "Projets Terminés", stat_exp: "Années d'Expérience", stat_clients: "Clients Satisfaits", scroll: "Défiler pour explorer" },
+    hero: { badge: "Creatif Développeur", title_1: "Design qui communique,", title_2: "expériences qui convertissent.", subtitle: "Identité de Marque • Dév Web/Mobile • Graphisme", btn_work: "Voir mes travaux", btn_info: "Demander Info!", stat_projects: "Projets Terminés", stat_exp: "Années d'Expérience", stat_clients: "Clients Satisfaits", scroll: "Défiler pour explorer" },
     services: { tag: "Services", title_1: "Je transforme vos", title_2: "idées en réalité", subtitle: "Des solutions concrètes pour élever votre marque.", graphic_desc: "Je crée des systèmes visuels cohérents qui racontent les valeurs de votre marque.", web_desc: "Sites web rapides et réactifs conçus pour maximiser les conversions.", ios_desc: "Développement d'interfaces mobiles intuitives centrées sur l'utilisateur.", video_desc: "Storytelling dynamique pour vos réseaux sociaux." },
     portfolio: { tag: "Portfolio", title: "Projets", subtitle: "Une sélection de mes projets les plus significatifs.", filter_all: "Tous", view_project: "Voir le projet →", visit_site: "Visiter le site →" },
     about: { tag: "À propos", title_1: "Designer avec une", title_2: "vision unique", text: "\"Je suis Christian Ciriello. J'aide les entreprises à définir leur présence numérique en alliant esthétique et performance.\"", val_creativity: "Créativité", val_creativity_desc: "Créer quelque chose d'unique.", val_precision: "Précision", val_precision_desc: "Attention aux détails.", val_passion: "Passion", val_passion_desc: "J'aime ce que je fais.", val_quality: "Qualité", val_quality_desc: "Standards élevés." },
@@ -184,7 +176,7 @@ const translations = {
   },
   pt: {
     nav: { home: "Início", services: "Serviços", portfolio: "Portfólio", about: "Sobre", contact: "Contato" },
-    hero: { badge: "Designer Gráfico e Desenvolvedor Web/IOS", title_1: "Design que comunica,", title_2: "experiências que convertem.", subtitle: "Identidade de Marca • Dev Web/Mobile • Design Gráfico", btn_work: "Ver meus trabalhos", btn_info: "Pedir Info!", stat_projects: "Projetos Concluídos", stat_exp: "Anos de Experiência", stat_clients: "Clientes Felizes", scroll: "Role para explorar" },
+    hero: { badge: "Desenvolvedor Criativo", title_1: "Design que comunica,", title_2: "experiências que convertem.", subtitle: "Identidade de Marca • Dev Web/Mobile • Design Gráfico", btn_work: "Ver meus trabalhos", btn_info: "Pedir Info!", stat_projects: "Projetos Concluídos", stat_exp: "Anos de Experiência", stat_clients: "Clientes Felizes", scroll: "Role para explorar" },
     services: { tag: "Serviços", title_1: "Transformo suas", title_2: "ideias em realidade", subtitle: "Soluções concretas para elevar sua marca.", graphic_desc: "Crio sistemas visuais coerentes que contam os valores da sua marca.", web_desc: "Sites rápidos e responsivos projetados para maximizar conversões.", ios_desc: "Desenvolvimento de interfaces móveis intuitivas centradas no usuário.", video_desc: "Storytelling dinâmico para suas redes sociais." },
     portfolio: { tag: "Portfólio", title: "Projetos", subtitle: "Uma seleção dos meus projetos mais significativos.", filter_all: "Todos", view_project: "Ver projeto →", visit_site: "Visitar site →" },
     about: { tag: "Sobre mim", title_1: "Designer com uma", title_2: "visão única", text: "\"Sou Christian Ciriello. Ajudo empresas a definir sua presença digital fundindo estética e desempenho.\"", val_creativity: "Criatividade", val_creativity_desc: "Criar algo único.", val_precision: "Precisão", val_precision_desc: "Atenção aos detalhes.", val_passion: "Paixão", val_passion_desc: "Amo o que faço.", val_quality: "Qualidade", val_quality_desc: "Padrões elevados." },
@@ -345,7 +337,7 @@ window.setLanguage = function(lang) {
       if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
         el.placeholder = text;
       } else {
-        el.textContent = text;
+        el.innerHTML = text;
       }
     }
   });
