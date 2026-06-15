@@ -220,36 +220,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Portfolio Filter Logic ---
- const filterButtons = document.querySelectorAll('.filter-btn');
+// --- Portfolio Filter Logic ---
+const filterButtons = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-card');
+const portfolioGrid = document.getElementById('portfolioGrid');
+
+function applyPortfolioFilter(filterValue) {
+  portfolioItems.forEach(item => {
+    const category = item.getAttribute('data-category');
+
+    if (filterValue === 'all') {
+      item.style.display = category === 'video' ? 'none' : 'block';
+    } else if (filterValue === category) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  if (portfolioGrid) {
+    portfolioGrid.classList.remove(
+      'portfolio-show-graphic',
+      'portfolio-show-web',
+      'portfolio-show-mobile',
+      'portfolio-show-social-media'
+    );
+
+    if (filterValue === 'graphic') {
+      portfolioGrid.classList.add('portfolio-show-graphic');
+    } else if (filterValue === 'web') {
+      portfolioGrid.classList.add('portfolio-show-web');
+    } else if (filterValue === 'mobile') {
+      portfolioGrid.classList.add('portfolio-show-mobile');
+    } else if (filterValue === 'social media') {
+      portfolioGrid.classList.add('portfolio-show-social-media');
+    }
+  }
+}
+
+// Al caricamento mostra subito Graphic Design
+applyPortfolioFilter('graphic');
 
 filterButtons.forEach(btn => {
   btn.addEventListener('click', () => {
-    // Gestione classi attive sui bottoni
     filterButtons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
     const filterValue = btn.getAttribute('data-filter');
-
-    portfolioItems.forEach(item => {
-      const category = item.getAttribute('data-category');
-
-      if (filterValue === 'all') {
-        // MOSTRA TUTTO TRANNE I VIDEO
-        if (category === 'video') {
-          item.style.display = 'none';
-        } else {
-          item.style.display = 'block';
-        }
-      } else if (filterValue === category) {
-        // MOSTRA SOLO LA CATEGORIA SELEZIONATA
-        item.style.display = 'block';
-      } else {
-        // NASCONDI IL RESTO
-        item.style.display = 'none';
-      }
-    });
+    applyPortfolioFilter(filterValue);
   });
 });
 

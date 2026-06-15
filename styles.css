@@ -1655,3 +1655,39 @@ a.contact-value:hover {
         transform: scale(1.15) !important;
     }
 }
+
+/* ============================================================
+   Portfolio default filter: mostra Graphic Design al caricamento
+   ============================================================ */
+
+.portfolio-grid.portfolio-show-graphic .portfolio-card {
+  display: none;
+}
+
+.portfolio-grid.portfolio-show-graphic .portfolio-card[data-category="graphic"] {
+  display: block;
+}
+
+.portfolio-grid.portfolio-show-web .portfolio-card {
+  display: none;
+}
+
+.portfolio-grid.portfolio-show-web .portfolio-card[data-category="web"] {
+  display: block;
+}
+
+.portfolio-grid.portfolio-show-mobile .portfolio-card {
+  display: none;
+}
+
+.portfolio-grid.portfolio-show-mobile .portfolio-card[data-category="mobile"] {
+  display: block;
+}
+
+.portfolio-grid.portfolio-show-social-media .portfolio-card {
+  display: none;
+}
+
+.portfolio-grid.portfolio-show-social-media .portfolio-card[data-category="social media"] {
+  display: block;
+}
