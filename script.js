@@ -8,7 +8,7 @@ const translations = {
       title_2: "codice che converte.",
       subtitle: "Brand Identity • Sviluppo Web/Mobile • Graphic Design • Video Making",
       btn_work: "Scopri i miei lavori",
-      btn_info: "Richiedi Info!",
+      btn_info: "Prenota una call",
       stat_projects: "Progetti Completati",
       stat_exp: "Anni di Esperienza",
       stat_clients: "Clienti Soddisfatti",
