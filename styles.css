@@ -1711,6 +1711,35 @@ a.contact-value:hover {
   display: block;
 }
 
+@media (max-width: 768px) {
+  /* Sezione Progetti: su mobile la griglia diventa una fila di card
+     orizzontali swipeable (stesso formato delle card desktop), invece
+     dello stack verticale. Mostra solo le card della categoria attiva,
+     esattamente come sul desktop. */
+  .portfolio-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 1.25rem;
+    padding: 0 1.5rem 0.5rem;
+    margin: 0 -1.5rem;
+  }
+
+  .portfolio-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .portfolio-card {
+    flex: 0 0 82%;
+    width: 82%;
+    max-width: 340px;
+    scroll-snap-align: center;
+  }
+}
+
 /* ===== Calendly Rounded Widget ===== */
 
 .calendly-wrapper {
