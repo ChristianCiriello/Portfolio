@@ -93,6 +93,27 @@ const translations = {
       a5: "Sì, resto disponibile dopo il lancio per piccole modifiche, assistenza tecnica o per pianificare insieme eventuali evoluzioni future del progetto.",
       q6: "Lavori anche con clienti fuori dall'Italia o da remoto?",
       a6: "Assolutamente sì, lavoro da remoto con clienti in tutta Italia e all'estero: call, condivisione file e aggiornamenti costanti rendono la distanza ininfluente sul risultato."
+    },
+    case_study: {
+      tag: "Case Study",
+      client_label: "Cliente",
+      service_label: "Servizio",
+      status_label: "Stato",
+      status_online: "Online",
+      visit_site: "Visita il sito →",
+      challenge: "La Sfida",
+      approach: "L'Approccio",
+      result: "Il Risultato",
+      tech: "Tecnologia",
+      frontend: "Frontend"
+    },
+    digipay: {
+      subtitle: "Un sito che spiega tre aree di consulenza diverse e guida il visitatore verso una richiesta di contatto qualificata.",
+      client_value: "Digi Pay S.r.l., Prato",
+      service_value: "Sviluppo Web & Local SEO",
+      challenge_p: "Digi Pay affianca aziende e professionisti su tre aree di consulenza molto diverse tra loro: pagamenti digitali (POS), telefonia/connettività ed energia. La sfida era spiegare con chiarezza un'offerta così ampia senza disperdere il visitatore, e trasformare l'interesse iniziale in una richiesta di contatto realmente qualificata.",
+      approach_p: "Ho sviluppato il sito su WordPress, organizzando i contenuti attorno alle tre aree di consulenza e aggiungendo un breve quiz interattivo a 3 domande che orienta subito il visitatore verso il servizio più rilevante per la sua attività. Ho poi reso esplicito il percorso \"come funziona\" in quattro passaggi — ascolto e analisi, proposta su misura, attivazione, assistenza continuativa — e costruito un form di contatto dettagliato per qualificare ogni richiesta fin dal primo invio.",
+      result_p: "Un sito che comunica trasparenza — nessun costo nascosto, consulenza dedicata — e competenza su tre servizi diversi, con un funnel di contatto pensato per far arrivare al team richieste già filtrate e pronte da lavorare."
     }
   },
   en: {
@@ -196,6 +217,27 @@ const translations = {
       a5: "Yes, I remain available after launch for small changes, technical support, or to plan future evolutions of the project together.",
       q6: "Do you work with clients outside Italy or remotely?",
       a6: "Absolutely, I work remotely with clients across Italy and abroad: calls, file sharing, and constant updates make distance irrelevant to the result."
+    },
+    case_study: {
+      tag: "Case Study",
+      client_label: "Client",
+      service_label: "Service",
+      status_label: "Status",
+      status_online: "Online",
+      visit_site: "Visit site →",
+      challenge: "The Challenge",
+      approach: "The Approach",
+      result: "The Result",
+      tech: "Technology",
+      frontend: "Frontend"
+    },
+    digipay: {
+      subtitle: "A site that explains three different consulting areas and guides visitors toward a qualified contact request.",
+      client_value: "Digi Pay S.r.l., Prato (Italy)",
+      service_value: "Web Development & Local SEO",
+      challenge_p: "Digi Pay supports businesses and professionals across three very different consulting areas: digital payments (POS), telephony/connectivity, and energy. The challenge was to clearly explain such a broad offering without losing the visitor, and to turn initial interest into a genuinely qualified contact request.",
+      approach_p: "I built the site on WordPress, organizing the content around the three consulting areas and adding a short 3-question interactive quiz that immediately points visitors toward the most relevant service for their business. I also made the \"how it works\" journey explicit in four steps — listening and analysis, tailored proposal, activation, ongoing support — and built a detailed contact form to qualify every request from the very first submission.",
+      result_p: "A site that communicates transparency — no hidden costs, dedicated consulting — and expertise across three different services, with a contact funnel designed to bring the team requests that are already filtered and ready to work."
     }
   },
   es: {
@@ -210,6 +252,15 @@ const translations = {
       title: "¿Te gusta este proyecto?",
       subtitle: "Podemos crear algo igual de increíble para tu negocio.",
       btn: "Hablemos de tu proyecto"
+    },
+    case_study: { tag: "Caso de Estudio", client_label: "Cliente", service_label: "Servicio", status_label: "Estado", status_online: "En línea", visit_site: "Visitar sitio →", challenge: "El Desafío", approach: "El Enfoque", result: "El Resultado", tech: "Tecnología", frontend: "Frontend" },
+    digipay: {
+      subtitle: "Un sitio que explica tres áreas de consultoría diferentes y guía al visitante hacia una solicitud de contacto cualificada.",
+      client_value: "Digi Pay S.r.l., Prato (Italia)",
+      service_value: "Desarrollo Web y SEO Local",
+      challenge_p: "Digi Pay acompaña a empresas y profesionales en tres áreas de consultoría muy distintas: pagos digitales (POS), telefonía/conectividad y energía. El desafío era explicar con claridad una oferta tan amplia sin dispersar al visitante, y convertir el interés inicial en una solicitud de contacto realmente cualificada.",
+      approach_p: "Desarrollé el sitio en WordPress, organizando los contenidos en torno a las tres áreas de consultoría y añadiendo un breve cuestionario interactivo de 3 preguntas que orienta de inmediato al visitante hacia el servicio más relevante para su actividad. También hice explícito el recorrido \"cómo funciona\" en cuatro pasos — escucha y análisis, propuesta a medida, activación, asistencia continua — y construí un formulario de contacto detallado para cualificar cada solicitud desde el primer envío.",
+      result_p: "Un sitio que comunica transparencia — sin costes ocultos, asesoramiento dedicado — y experiencia en tres servicios distintos, con un embudo de contacto pensado para que el equipo reciba solicitudes ya filtradas y listas para trabajar."
     }
   },
   fr: {
@@ -224,6 +275,15 @@ const translations = {
       title: "Vous aimez ce projet ?",
       subtitle: "Nous pouvons créer quelque chose de tout aussi incroyable pour votre entreprise.",
       btn: "Parlons de votre projet"
+    },
+    case_study: { tag: "Étude de Cas", client_label: "Client", service_label: "Service", status_label: "Statut", status_online: "En ligne", visit_site: "Visiter le site →", challenge: "Le Défi", approach: "L'Approche", result: "Le Résultat", tech: "Technologie", frontend: "Frontend" },
+    digipay: {
+      subtitle: "Un site qui explique trois domaines de conseil différents et guide le visiteur vers une demande de contact qualifiée.",
+      client_value: "Digi Pay S.r.l., Prato (Italie)",
+      service_value: "Développement Web & SEO Local",
+      challenge_p: "Digi Pay accompagne les entreprises et les professionnels sur trois domaines de conseil très différents : paiements numériques (TPE), téléphonie/connectivité et énergie. Le défi était d'expliquer clairement une offre aussi large sans perdre le visiteur, et de transformer l'intérêt initial en une demande de contact réellement qualifiée.",
+      approach_p: "J'ai développé le site sur WordPress, en organisant les contenus autour des trois domaines de conseil et en ajoutant un court quiz interactif de 3 questions qui oriente immédiatement le visiteur vers le service le plus pertinent pour son activité. J'ai aussi rendu explicite le parcours « comment ça marche » en quatre étapes — écoute et analyse, proposition sur mesure, activation, assistance continue — et construit un formulaire de contact détaillé pour qualifier chaque demande dès le premier envoi.",
+      result_p: "Un site qui communique la transparence — aucun coût caché, conseil dédié — et l'expertise sur trois services différents, avec un tunnel de contact pensé pour faire parvenir à l'équipe des demandes déjà filtrées et prêtes à traiter."
     }
   },
   pt: {
@@ -238,6 +298,15 @@ const translations = {
       title: "Gostou deste projeto?",
       subtitle: "Podemos criar algo tão incrível quanto para o seu negócio.",
       btn: "Vamos falar sobre seu projeto"
+    },
+    case_study: { tag: "Estudo de Caso", client_label: "Cliente", service_label: "Serviço", status_label: "Status", status_online: "Online", visit_site: "Visitar site →", challenge: "O Desafio", approach: "A Abordagem", result: "O Resultado", tech: "Tecnologia", frontend: "Frontend" },
+    digipay: {
+      subtitle: "Um site que explica três áreas de consultoria diferentes e guia o visitante até um pedido de contato qualificado.",
+      client_value: "Digi Pay S.r.l., Prato (Itália)",
+      service_value: "Desenvolvimento Web e SEO Local",
+      challenge_p: "A Digi Pay apoia empresas e profissionais em três áreas de consultoria muito diferentes: pagamentos digitais (POS), telefonia/conectividade e energia. O desafio era explicar com clareza uma oferta tão ampla sem dispersar o visitante, transformando o interesse inicial em um pedido de contato realmente qualificado.",
+      approach_p: "Desenvolvi o site em WordPress, organizando os conteúdos em torno das três áreas de consultoria e adicionando um breve quiz interativo de 3 perguntas que orienta imediatamente o visitante para o serviço mais relevante para o seu negócio. Também tornei explícito o percurso \"como funciona\" em quatro etapas — escuta e análise, proposta sob medida, ativação, suporte contínuo — e construí um formulário de contato detalhado para qualificar cada pedido desde o primeiro envio.",
+      result_p: "Um site que comunica transparência — sem custos ocultos, consultoria dedicada — e competência em três serviços diferentes, com um funil de contato pensado para levar à equipe pedidos já filtrados e prontos para trabalhar."
     }
   }
 };
