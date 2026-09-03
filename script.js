@@ -114,6 +114,17 @@ const translations = {
       challenge_p: "Digi Pay affianca aziende e professionisti su tre aree di consulenza molto diverse tra loro: pagamenti digitali (POS), telefonia/connettività ed energia. La sfida era spiegare con chiarezza un'offerta così ampia senza disperdere il visitatore, e trasformare l'interesse iniziale in una richiesta di contatto realmente qualificata.",
       approach_p: "Ho sviluppato il sito su WordPress, organizzando i contenuti attorno alle tre aree di consulenza e aggiungendo un breve quiz interattivo a 3 domande che orienta subito il visitatore verso il servizio più rilevante per la sua attività. Ho poi reso esplicito il percorso \"come funziona\" in quattro passaggi — ascolto e analisi, proposta su misura, attivazione, assistenza continuativa — e costruito un form di contatto dettagliato per qualificare ogni richiesta fin dal primo invio.",
       result_p: "Un sito che comunica trasparenza — nessun costo nascosto, consulenza dedicata — e competenza su tre servizi diversi, con un funnel di contatto pensato per far arrivare al team richieste già filtrate e pronte da lavorare."
+    },
+    matteo_esposito: {
+      subtitle: "Il sito è in fase di sviluppo: presto online per raccontare il metodo di coaching di Matteo Esposito.",
+      client_value: "Matteo Esposito Coaching",
+      service_value: "Sviluppo Web",
+      project_title: "Il Progetto",
+      project_p: "Matteo Esposito Coaching è un brand di personal training e coaching fitness. L'obiettivo del sito è costruire una presenza online che comunichi con chiarezza il metodo di allenamento e trasformi i visitatori in richieste di consulenza.",
+      status_title: "Stato Attuale",
+      status_p: "Il progetto è attualmente in lavorazione. Questa pagina verrà aggiornata con il case study completo non appena il sito sarà online.",
+      design_title: "Design",
+      dev_status: "In sviluppo"
     }
   },
   en: {
@@ -238,6 +249,17 @@ const translations = {
       challenge_p: "Digi Pay supports businesses and professionals across three very different consulting areas: digital payments (POS), telephony/connectivity, and energy. The challenge was to clearly explain such a broad offering without losing the visitor, and to turn initial interest into a genuinely qualified contact request.",
       approach_p: "I built the site on WordPress, organizing the content around the three consulting areas and adding a short 3-question interactive quiz that immediately points visitors toward the most relevant service for their business. I also made the \"how it works\" journey explicit in four steps — listening and analysis, tailored proposal, activation, ongoing support — and built a detailed contact form to qualify every request from the very first submission.",
       result_p: "A site that communicates transparency — no hidden costs, dedicated consulting — and expertise across three different services, with a contact funnel designed to bring the team requests that are already filtered and ready to work."
+    },
+    matteo_esposito: {
+      subtitle: "The site is currently in development: coming soon to showcase Matteo Esposito's coaching method.",
+      client_value: "Matteo Esposito Coaching",
+      service_value: "Web Development",
+      project_title: "The Project",
+      project_p: "Matteo Esposito Coaching is a personal training and fitness coaching brand. The goal of the site is to build an online presence that clearly communicates the training method and turns visitors into consultation requests.",
+      status_title: "Current Status",
+      status_p: "The project is currently in progress. This page will be updated with the full case study as soon as the site goes live.",
+      design_title: "Design",
+      dev_status: "In development"
     }
   },
   es: {
@@ -261,6 +283,17 @@ const translations = {
       challenge_p: "Digi Pay acompaña a empresas y profesionales en tres áreas de consultoría muy distintas: pagos digitales (POS), telefonía/conectividad y energía. El desafío era explicar con claridad una oferta tan amplia sin dispersar al visitante, y convertir el interés inicial en una solicitud de contacto realmente cualificada.",
       approach_p: "Desarrollé el sitio en WordPress, organizando los contenidos en torno a las tres áreas de consultoría y añadiendo un breve cuestionario interactivo de 3 preguntas que orienta de inmediato al visitante hacia el servicio más relevante para su actividad. También hice explícito el recorrido \"cómo funciona\" en cuatro pasos — escucha y análisis, propuesta a medida, activación, asistencia continua — y construí un formulario de contacto detallado para cualificar cada solicitud desde el primer envío.",
       result_p: "Un sitio que comunica transparencia — sin costes ocultos, asesoramiento dedicado — y experiencia en tres servicios distintos, con un embudo de contacto pensado para que el equipo reciba solicitudes ya filtradas y listas para trabajar."
+    },
+    matteo_esposito: {
+      subtitle: "El sitio está actualmente en desarrollo: próximamente en línea para mostrar el método de coaching de Matteo Esposito.",
+      client_value: "Matteo Esposito Coaching",
+      service_value: "Desarrollo Web",
+      project_title: "El Proyecto",
+      project_p: "Matteo Esposito Coaching es una marca de entrenamiento personal y coaching fitness. El objetivo del sitio es construir una presencia online que comunique con claridad el método de entrenamiento y convierta a los visitantes en solicitudes de consulta.",
+      status_title: "Estado Actual",
+      status_p: "El proyecto está actualmente en desarrollo. Esta página se actualizará con el caso de estudio completo en cuanto el sitio esté en línea.",
+      design_title: "Diseño",
+      dev_status: "En desarrollo"
     }
   },
   fr: {
@@ -284,6 +317,17 @@ const translations = {
       challenge_p: "Digi Pay accompagne les entreprises et les professionnels sur trois domaines de conseil très différents : paiements numériques (TPE), téléphonie/connectivité et énergie. Le défi était d'expliquer clairement une offre aussi large sans perdre le visiteur, et de transformer l'intérêt initial en une demande de contact réellement qualifiée.",
       approach_p: "J'ai développé le site sur WordPress, en organisant les contenus autour des trois domaines de conseil et en ajoutant un court quiz interactif de 3 questions qui oriente immédiatement le visiteur vers le service le plus pertinent pour son activité. J'ai aussi rendu explicite le parcours « comment ça marche » en quatre étapes — écoute et analyse, proposition sur mesure, activation, assistance continue — et construit un formulaire de contact détaillé pour qualifier chaque demande dès le premier envoi.",
       result_p: "Un site qui communique la transparence — aucun coût caché, conseil dédié — et l'expertise sur trois services différents, avec un tunnel de contact pensé pour faire parvenir à l'équipe des demandes déjà filtrées et prêtes à traiter."
+    },
+    matteo_esposito: {
+      subtitle: "Le site est actuellement en cours de développement : bientôt en ligne pour présenter la méthode de coaching de Matteo Esposito.",
+      client_value: "Matteo Esposito Coaching",
+      service_value: "Développement Web",
+      project_title: "Le Projet",
+      project_p: "Matteo Esposito Coaching est une marque de coaching sportif et d'entraînement personnel. L'objectif du site est de créer une présence en ligne qui communique clairement la méthode d'entraînement et transforme les visiteurs en demandes de consultation.",
+      status_title: "État Actuel",
+      status_p: "Le projet est actuellement en cours de réalisation. Cette page sera mise à jour avec l'étude de cas complète dès que le site sera en ligne.",
+      design_title: "Design",
+      dev_status: "En développement"
     }
   },
   pt: {
@@ -307,6 +351,17 @@ const translations = {
       challenge_p: "A Digi Pay apoia empresas e profissionais em três áreas de consultoria muito diferentes: pagamentos digitais (POS), telefonia/conectividade e energia. O desafio era explicar com clareza uma oferta tão ampla sem dispersar o visitante, transformando o interesse inicial em um pedido de contato realmente qualificado.",
       approach_p: "Desenvolvi o site em WordPress, organizando os conteúdos em torno das três áreas de consultoria e adicionando um breve quiz interativo de 3 perguntas que orienta imediatamente o visitante para o serviço mais relevante para o seu negócio. Também tornei explícito o percurso \"como funciona\" em quatro etapas — escuta e análise, proposta sob medida, ativação, suporte contínuo — e construí um formulário de contato detalhado para qualificar cada pedido desde o primeiro envio.",
       result_p: "Um site que comunica transparência — sem custos ocultos, consultoria dedicada — e competência em três serviços diferentes, com um funil de contato pensado para levar à equipe pedidos já filtrados e prontos para trabalhar."
+    },
+    matteo_esposito: {
+      subtitle: "O site está atualmente em desenvolvimento: em breve online para apresentar o método de coaching de Matteo Esposito.",
+      client_value: "Matteo Esposito Coaching",
+      service_value: "Desenvolvimento Web",
+      project_title: "O Projeto",
+      project_p: "Matteo Esposito Coaching é uma marca de personal training e coaching fitness. O objetivo do site é construir uma presença online que comunique com clareza o método de treino e transforme os visitantes em pedidos de consultoria.",
+      status_title: "Status Atual",
+      status_p: "O projeto está atualmente em desenvolvimento. Esta página será atualizada com o case study completo assim que o site estiver no ar.",
+      design_title: "Design",
+      dev_status: "Em desenvolvimento"
     }
   }
 };
@@ -336,7 +391,7 @@ function buildTestimonialCard(client, hidden) {
           </svg>
           <p class="testimonial-quote" data-i18n="testimonials.placeholder_quote">Recensione in arrivo — presto qui il feedback reale di questo cliente.</p>
           <div class="testimonial-author">
-            <div class="testimonial-avatar"><img src="${client.avatar}" alt="${client.name}" loading="lazy"></div>
+            <div class="testimonial-avatar"><img src="${client.avatar}" alt="${client.name}"></div>
             <div class="testimonial-author-info">
               <span class="testimonial-name">${client.name}</span>
               <span class="testimonial-role">${client.role}</span>
