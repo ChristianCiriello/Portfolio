@@ -72,17 +72,9 @@ const translations = {
       tag: "Testimonianze",
       title_1: "Cosa dicono",
       title_2: "di me",
-      subtitle: "Sezione in preparazione: presto qui troverai le testimonianze reali dei clienti con cui ho lavorato.",
-      badge: "Esempio",
-      quote_1: "\"[Testimonianza reale del cliente da inserire qui]\"",
-      name_1: "[Nome Cliente]",
-      role_1: "[Ruolo, Azienda]",
-      quote_2: "\"[Testimonianza reale del cliente da inserire qui]\"",
-      name_2: "[Nome Cliente]",
-      role_2: "[Ruolo, Azienda]",
-      quote_3: "\"[Testimonianza reale del cliente da inserire qui]\"",
-      name_3: "[Nome Cliente]",
-      role_3: "[Ruolo, Azienda]"
+      subtitle: "I clienti con cui ho lavorato in questi anni.",
+      badge: "In arrivo",
+      placeholder_quote: "Recensione in arrivo — presto qui il feedback reale di questo cliente."
     },
     faq: {
       tag: "FAQ",
@@ -183,17 +175,9 @@ const translations = {
       tag: "Testimonials",
       title_1: "What people",
       title_2: "say about me",
-      subtitle: "Section in progress: real testimonials from clients I've worked with will be here soon.",
-      badge: "Example",
-      quote_1: "\"[Real client testimonial to be added here]\"",
-      name_1: "[Client Name]",
-      role_1: "[Role, Company]",
-      quote_2: "\"[Real client testimonial to be added here]\"",
-      name_2: "[Client Name]",
-      role_2: "[Role, Company]",
-      quote_3: "\"[Real client testimonial to be added here]\"",
-      name_3: "[Client Name]",
-      role_3: "[Role, Company]"
+      subtitle: "The clients I've worked with over the years.",
+      badge: "Coming soon",
+      placeholder_quote: "Review coming soon — this client's real feedback will be here shortly."
     },
     faq: {
       tag: "FAQ",
@@ -258,7 +242,52 @@ const translations = {
   }
 };
 
+// --- Testimonials Data & Rendering ---
+const testimonialClients = [
+  { name: "Farmacia di Coiano", role: "Farmacia, Prato", avatar: "logoFarmacia.jpg" },
+  { name: "Traslochi BM", role: "Traslochi, Toscana", avatar: "logoTraslochi.jpg" },
+  { name: "See The Sea", role: "Noleggio Barche, La Spezia", avatar: "seetheseaThumbnail.png" },
+  { name: "Daman Ristorazione", role: "Catering & Ristorazione", avatar: "icons&logos/damanLogo.png" },
+  { name: "Samanta Evangelisti", role: "Egea Beach House", avatar: "egeaBeachHouseLogo.PNG" },
+  { name: "Soccorso Stradale Samuele", role: "Soccorso Stradale", avatar: "soccorsoThumbnail.png" },
+  { name: "OMI TRE", role: "Officina Meccatronica, Caserta", avatar: "omitreLogo.jpg" },
+  { name: "Raffaele Diodati", role: "Parafarmacia Artemisia", avatar: "Logo Artemisia.png" },
+  { name: "Antonio Imperato", role: "Ottica Imperato", avatar: "otticaImperatoLogo.jpg" },
+  { name: "Rosa Chiara Uglietti", role: "Gotas Farmasanitaria Ortopedia", avatar: "gotasFarmaLogo.jpg" },
+  { name: "Furlan Trade", role: "Distribuzione & Commercio", avatar: "furlanTradeLogo.png" }
+];
+
+function buildTestimonialCard(client, hidden) {
+  return `
+        <article class="testimonial-card"${hidden ? ' aria-hidden="true" tabindex="-1"' : ''}>
+          <span class="testimonial-placeholder-badge" data-i18n="testimonials.badge">In arrivo</span>
+          <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M9.5 8C6.5 8 4 10.5 4 14s2.5 6 5.5 6h.5v-2h-.5c-1.9 0-3.5-1.6-3.5-3.5S8.1 11 10 11h1V8H9.5zm9 0c-3 0-5.5 2.5-5.5 6s2.5 6 5.5 6h.5v-2h-.5c-1.9 0-3.5-1.6-3.5-3.5S17.1 11 19 11h1V8h-1.5z" />
+          </svg>
+          <p class="testimonial-quote" data-i18n="testimonials.placeholder_quote">Recensione in arrivo — presto qui il feedback reale di questo cliente.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar"><img src="${client.avatar}" alt="${client.name}" loading="lazy"></div>
+            <div class="testimonial-author-info">
+              <span class="testimonial-name">${client.name}</span>
+              <span class="testimonial-role">${client.role}</span>
+            </div>
+          </div>
+        </article>`;
+}
+
+function renderTestimonials() {
+  const track = document.getElementById('testimonialsTrack');
+  if (!track) return;
+
+  const cardsHTML = testimonialClients.map(c => buildTestimonialCard(c, false)).join('');
+  const cardsHTMLHidden = testimonialClients.map(c => buildTestimonialCard(c, true)).join('');
+  track.innerHTML = cardsHTML + cardsHTMLHidden;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  renderTestimonials();
+
   // --- Mobile Menu Logic ---
   const mobileToggle = document.getElementById('mobileToggle');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -326,8 +355,8 @@ function applyPortfolioFilter(filterValue) {
   }
 }
 
-// Al caricamento mostra subito Graphic Design
-applyPortfolioFilter('graphic');
+// Al caricamento mostra subito Sviluppo Web
+applyPortfolioFilter('web');
 
 filterButtons.forEach(btn => {
   btn.addEventListener('click', () => {
