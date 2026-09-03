@@ -67,6 +67,40 @@ const translations = {
       title: "Ti piace questo progetto?",
       subtitle: "Possiamo creare qualcosa di altrettanto incredibile per il tuo business.",
       btn: "Parliamo del tuo progetto"
+    },
+    testimonials: {
+      tag: "Testimonianze",
+      title_1: "Cosa dicono",
+      title_2: "di me",
+      subtitle: "Sezione in preparazione: presto qui troverai le testimonianze reali dei clienti con cui ho lavorato.",
+      badge: "Esempio",
+      quote_1: "\"[Testimonianza reale del cliente da inserire qui]\"",
+      name_1: "[Nome Cliente]",
+      role_1: "[Ruolo, Azienda]",
+      quote_2: "\"[Testimonianza reale del cliente da inserire qui]\"",
+      name_2: "[Nome Cliente]",
+      role_2: "[Ruolo, Azienda]",
+      quote_3: "\"[Testimonianza reale del cliente da inserire qui]\"",
+      name_3: "[Nome Cliente]",
+      role_3: "[Ruolo, Azienda]"
+    },
+    faq: {
+      tag: "FAQ",
+      title_1: "Domande",
+      title_2: "frequenti",
+      subtitle: "Le risposte alle domande che mi vengono fatte più spesso prima di iniziare un progetto.",
+      q1: "Quanto tempo richiede un progetto?",
+      a1: "Dipende dalla complessità: un logo o una brand identity richiedono in genere qualche settimana, mentre un sito web o un'app possono richiedere più tempo. Dopo la prima call definiamo insieme una timeline chiara e realistica.",
+      q2: "Come funziona il processo di lavoro?",
+      a2: "Si parte con una call conoscitiva per capire obiettivi e bisogni, seguita da una proposta con tempi e costi. Dopo l'ok si passa a design e sviluppo, con momenti di revisione condivisi lungo il percorso fino alla consegna finale.",
+      q3: "Quante revisioni sono incluse?",
+      a3: "Il numero di revisioni viene concordato in fase di preventivo in base al tipo di progetto, così da avere margine sufficiente per arrivare a un risultato che rispecchi davvero la tua visione.",
+      q4: "Come funzionano i pagamenti?",
+      a4: "Generalmente è previsto un acconto all'avvio del progetto e il saldo alla consegna. Per progetti più lunghi si possono concordare pagamenti intermedi legati alle fasi di lavoro.",
+      q5: "Offri assistenza anche dopo la consegna?",
+      a5: "Sì, resto disponibile dopo il lancio per piccole modifiche, assistenza tecnica o per pianificare insieme eventuali evoluzioni future del progetto.",
+      q6: "Lavori anche con clienti fuori dall'Italia o da remoto?",
+      a6: "Assolutamente sì, lavoro da remoto con clienti in tutta Italia e all'estero: call, condivisione file e aggiornamenti costanti rendono la distanza ininfluente sul risultato."
     }
   },
   en: {
@@ -144,6 +178,40 @@ const translations = {
       title: "Do you like this project?",
       subtitle: "We can create something just as incredible for your business.",
       btn: "Let's talk about your project"
+    },
+    testimonials: {
+      tag: "Testimonials",
+      title_1: "What people",
+      title_2: "say about me",
+      subtitle: "Section in progress: real testimonials from clients I've worked with will be here soon.",
+      badge: "Example",
+      quote_1: "\"[Real client testimonial to be added here]\"",
+      name_1: "[Client Name]",
+      role_1: "[Role, Company]",
+      quote_2: "\"[Real client testimonial to be added here]\"",
+      name_2: "[Client Name]",
+      role_2: "[Role, Company]",
+      quote_3: "\"[Real client testimonial to be added here]\"",
+      name_3: "[Client Name]",
+      role_3: "[Role, Company]"
+    },
+    faq: {
+      tag: "FAQ",
+      title_1: "Frequently asked",
+      title_2: "questions",
+      subtitle: "Answers to the questions I get asked most often before starting a project.",
+      q1: "How long does a project take?",
+      a1: "It depends on the complexity: a logo or brand identity usually takes a few weeks, while a website or app can take longer. After the first call we'll define a clear, realistic timeline together.",
+      q2: "How does the work process work?",
+      a2: "It starts with a discovery call to understand goals and needs, followed by a proposal with timeline and costs. Once approved, we move to design and development, with shared review moments along the way through to final delivery.",
+      q3: "How many revisions are included?",
+      a3: "The number of revisions is agreed upon in the quote based on the type of project, so there's enough room to reach a result that truly reflects your vision.",
+      q4: "How do payments work?",
+      a4: "Generally a deposit is required to start the project, with the balance due on delivery. For longer projects, intermediate payments tied to project phases can be arranged.",
+      q5: "Do you offer support after delivery?",
+      a5: "Yes, I remain available after launch for small changes, technical support, or to plan future evolutions of the project together.",
+      q6: "Do you work with clients outside Italy or remotely?",
+      a6: "Absolutely, I work remotely with clients across Italy and abroad: calls, file sharing, and constant updates make distance irrelevant to the result."
     }
   },
   es: {
@@ -271,9 +339,30 @@ filterButtons.forEach(btn => {
   });
 });
 
+  // --- FAQ Accordion Logic ---
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+
+    question.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+
+      faqItems.forEach(other => {
+        other.classList.remove('active');
+        other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isActive) {
+        item.classList.add('active');
+        question.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
   // --- Language Switcher Logic ---
   injectLanguageSwitcher();
-  
+
   // Set initial language
   const savedLang = localStorage.getItem('selectedLang') || 'it';
   setLanguage(savedLang);
