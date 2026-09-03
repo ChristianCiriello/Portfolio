@@ -285,8 +285,141 @@ function renderTestimonials() {
   track.innerHTML = cardsHTML + cardsHTMLHidden;
 }
 
+// --- Hero Interactive Background (mouse parallax) ---
+function initHeroParallax() {
+  const hero = document.querySelector('.hero');
+  const parallaxEls = document.querySelectorAll('.hero-bg [data-depth]');
+  if (!hero || !parallaxEls.length) return;
+
+  const maxShift = 50; // px, at depth = 1
+  let targetX = 0;
+  let targetY = 0;
+  let rafId = null;
+
+  function applyParallax() {
+    parallaxEls.forEach(el => {
+      const depth = parseFloat(el.dataset.depth) || 0.3;
+      const moveX = targetX * depth * maxShift;
+      const moveY = targetY * depth * maxShift;
+      el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+    rafId = null;
+  }
+
+  function queueUpdate() {
+    if (!rafId) {
+      rafId = requestAnimationFrame(applyParallax);
+    }
+  }
+
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    targetX = (e.clientX - rect.left) / rect.width - 0.5;
+    targetY = (e.clientY - rect.top) / rect.height - 0.5;
+    queueUpdate();
+  });
+
+  hero.addEventListener('mouseleave', () => {
+    targetX = 0;
+    targetY = 0;
+    queueUpdate();
+  });
+}
+
+// --- Hero Cursor Dot (premium follow-cursor effect) ---
+function initHeroCursorDot() {
+  const hero = document.querySelector('.hero');
+  const dot = document.querySelector('.hero-cursor-dot');
+  const glow = document.querySelector('.hero-cursor-glow');
+  if (!hero || !dot || !glow) return;
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let dotX = 0;
+  let dotY = 0;
+  let glowX = 0;
+  let glowY = 0;
+  let rafId = null;
+  let hovering = false;
+  let suppressed = false;
+
+  function updateVisibility() {
+    const visible = hovering && !suppressed;
+    dot.style.opacity = visible ? '1' : '0';
+    glow.style.opacity = visible ? '1' : '0';
+  }
+
+  function loop() {
+    dotX += (mouseX - dotX) * 0.35;
+    dotY += (mouseY - dotY) * 0.35;
+    glowX += (mouseX - glowX) * 0.12;
+    glowY += (mouseY - glowY) * 0.12;
+
+    dot.style.transform = `translate(${dotX}px, ${dotY}px)`;
+    glow.style.transform = `translate(${glowX}px, ${glowY}px)`;
+
+    const settled = Math.abs(mouseX - dotX) < 0.4 && Math.abs(mouseY - glowY) < 0.4;
+
+    if (hovering || !settled) {
+      rafId = requestAnimationFrame(loop);
+    } else {
+      rafId = null;
+    }
+  }
+
+  function ensureLoop() {
+    if (!rafId) {
+      rafId = requestAnimationFrame(loop);
+    }
+  }
+
+  hero.addEventListener('mouseenter', (e) => {
+    const rect = hero.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+    dotX = mouseX;
+    dotY = mouseY;
+    glowX = mouseX;
+    glowY = mouseY;
+    hovering = true;
+    updateVisibility();
+    ensureLoop();
+  });
+
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+    ensureLoop();
+  });
+
+  hero.addEventListener('mouseleave', () => {
+    hovering = false;
+    updateVisibility();
+  });
+
+  // Nascondi il cursore custom sopra bottoni e link, per non sovrapporsi al loro hover
+  hero.addEventListener('mouseover', (e) => {
+    if (e.target.closest('a, button')) {
+      suppressed = true;
+      updateVisibility();
+    }
+  });
+
+  hero.addEventListener('mouseout', (e) => {
+    const stillOnInteractive = e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest('a, button');
+    if (!stillOnInteractive) {
+      suppressed = false;
+      updateVisibility();
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderTestimonials();
+  initHeroParallax();
+  initHeroCursorDot();
 
   // --- Mobile Menu Logic ---
   const mobileToggle = document.getElementById('mobileToggle');
