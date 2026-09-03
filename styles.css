@@ -1984,17 +1984,15 @@ a.contact-value:hover {
 }
 
 @media (max-width: 768px) {
-  /* Su mobile il carosello smette di scorrere da solo e diventa
-     una lista di card scorrevole a swipe, con snap su ogni card. */
+  /* Su mobile lo scorrimento automatico continua (guidato via JS su
+     scrollLeft invece che dall'animazione CSS), ma il carosello resta
+     anche trascinabile/swipeable a dito: il tocco mette in pausa
+     l'auto-scroll, che riprende da solo poco dopo il rilascio. */
   .testimonials-carousel {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    -webkit-mask-image: none;
-    mask-image: none;
-    padding-bottom: 0.5rem;
   }
 
   .testimonials-carousel::-webkit-scrollbar {
@@ -2003,7 +2001,6 @@ a.contact-value:hover {
 
   .testimonials-track {
     animation: none;
-    padding: 0 1.25rem;
   }
 
   .testimonial-card {
@@ -2011,11 +2008,6 @@ a.contact-value:hover {
     width: 78vw;
     max-width: 300px;
     padding: 1.5rem;
-    scroll-snap-align: center;
-  }
-
-  .testimonial-card[aria-hidden="true"] {
-    display: none;
   }
 }
 

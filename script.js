@@ -409,6 +409,59 @@ function renderTestimonials() {
   track.innerHTML = cardsHTML + cardsHTMLHidden;
 }
 
+// --- Testimonials Mobile Auto-Scroll (continuo ma swipeable a dito) ---
+function initTestimonialsMobileAutoScroll() {
+  const carousel = document.querySelector('.testimonials-carousel');
+  const track = document.querySelector('.testimonials-track');
+  if (!carousel || !track) return;
+
+  const mq = window.matchMedia('(max-width: 768px)');
+  const speed = 0.45; // px per frame
+  let rafId = null;
+  let paused = false;
+  let resumeTimer = null;
+
+  function step() {
+    if (!paused) {
+      const halfWidth = track.scrollWidth / 2;
+      carousel.scrollLeft += speed;
+      if (carousel.scrollLeft >= halfWidth) {
+        carousel.scrollLeft -= halfWidth;
+      }
+    }
+    rafId = requestAnimationFrame(step);
+  }
+
+  function pause() {
+    paused = true;
+    clearTimeout(resumeTimer);
+  }
+
+  function scheduleResume() {
+    clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(() => { paused = false; }, 2200);
+  }
+
+  carousel.addEventListener('touchstart', pause, { passive: true });
+  carousel.addEventListener('touchend', scheduleResume, { passive: true });
+  carousel.addEventListener('touchcancel', scheduleResume, { passive: true });
+  carousel.addEventListener('pointerdown', pause);
+  carousel.addEventListener('pointerup', scheduleResume);
+  carousel.addEventListener('pointercancel', scheduleResume);
+
+  function syncWithViewport() {
+    if (mq.matches) {
+      if (!rafId) rafId = requestAnimationFrame(step);
+    } else if (rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
+
+  mq.addEventListener('change', syncWithViewport);
+  syncWithViewport();
+}
+
 // --- Hero Interactive Background (mouse parallax) ---
 function initHeroParallax() {
   const hero = document.querySelector('.hero');
@@ -542,6 +595,7 @@ function initHeroCursorDot() {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderTestimonials();
+  initTestimonialsMobileAutoScroll();
   initHeroParallax();
   initHeroCursorDot();
 
